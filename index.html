@@ -1,2 +1,51 @@
-hello world
-hello mom
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    
+
+    <img src="assets/images/cathedral.jpg" id="the-img" style="max-width: 200px;"><br>
+
+    <div id='map' style='width: 800px; height: 500px;'></div>
+    <script>
+      document.getElementById("the-img").onclick = function() {
+
+        EXIF.getData(this, function() {
+
+        myData = this;
+        var lo = myData.exifdata.GPSLongitude;
+        var la = myData.exifdata.GPSLatitude;
+        
+        
+        function getCoordinates(data){
+          var cord1 = data[0].numerator
+          var cord2 = data[1].numerator
+          var cord3 = data[2].numerator
+
+          var newCoordinates = [cord1, cord2, cord3]
+
+          return newCoordinates
+        }
+        console.log("longitude",getCoordinates(lo)); 
+        console.log("latitude",getCoordinates(la));    
+        console.log(myData.exifdata);
+        
+        });
+      }
+      mapboxgl.accessToken = 'pk.eyJ1IjoibGVubmFyZHZrIiwiYSI6ImNqdXh4NGQzYTBiYzk0ZG5yZzV1NHRiNTAifQ.kkv2iqpVK2q6Uij3v7spZA';
+      var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9'
+      });
+    </script>
+</body>
+</html>
