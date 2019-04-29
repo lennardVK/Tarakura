@@ -1,5 +1,7 @@
+let post_code = "49090";
+
 function initMap() {
-  
+
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.674, lng: -73.945},
     zoom: 2,
@@ -83,5 +85,9 @@ function initMap() {
         stylers: [{color: '#17263c'}]
       }
     ]
+
+
+    
   });
+  
 }
