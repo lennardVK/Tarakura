@@ -16,7 +16,12 @@
     <img src="assets/images/cathedral.jpg" id="the-img" style="max-width: 200px;"><br>
 
     <div id='map' style='width: 800px; height: 500px;'></div>
+    <style>
+        
+        </style>
     <script>
+      
+
       document.getElementById("the-img").onclick = function() {
 
         EXIF.getData(this, function() {
@@ -35,17 +40,67 @@
 
           return newCoordinates
         }
+
+        function setMarker(){
+          var marker = new mapboxgl.Marker()
+          .setLngLat(getCoordinates(lo))
+          .addTo(map);
+        }
+        
         console.log("longitude",getCoordinates(lo)); 
         console.log("latitude",getCoordinates(la));    
         console.log(myData.exifdata);
-        
+
+        var marker = new mapboxgl.Marker()
+          .setLngLat(getCoordinates(la))
+          .addTo(map);
         });
       }
+
       mapboxgl.accessToken = 'pk.eyJ1IjoibGVubmFyZHZrIiwiYSI6ImNqdXh4NGQzYTBiYzk0ZG5yZzV1NHRiNTAifQ.kkv2iqpVK2q6Uij3v7spZA';
       var map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v9'
+      style: 'mapbox://styles/mapbox/dark-v10',
+      center: [-122.486052, 37.830348],
+      
       });
+       
+      map.on('load', function () {
+       
+      map.addLayer({
+      "id": "route",
+      "type": "line",
+      "source": {
+      "type": "geojson",
+      "data": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+      "type": "LineString",
+      "coordinates": [
+      [-122.48369693756104, 37.83381888486939],
+      [-122.49378204345702, 37.83368330777276]
+      ]
+      }
+      }
+      },
+      "layout": {
+      "line-join": "round",
+      "line-cap": "round"
+      },
+      "paint": {
+      "line-color": "#888",
+      "line-width": 8
+      }
+      });
+      });
+
+      
+      
+      
+      
+
+
     </script>
 </body>
 </html>
