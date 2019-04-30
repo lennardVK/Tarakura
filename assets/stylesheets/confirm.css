@@ -1,11 +1,23 @@
 .tga_confirm {
-
+  width: 50%;
+  flex-direction: column;
+  position: absolute; 
+  z-index: 1000;
+  margin: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background: rgb(255, 255, 255);
+  display: none;
 }
 
 .tga_confirm_text {
-  
+  font-size: 2rem;
 }
 
 .tga_confirm_btn {
-  
+  width: 8rem;
+  height: 2rem;
+  cursor: pointer;
 }
