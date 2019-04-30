@@ -5,14 +5,23 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/stylesheets/map.css">
+    <link rel="stylesheet" href="assets/stylesheets/form.css">
+    <link rel="stylesheet" href="assets/stylesheets/confirm.css">
   </head>
   <body>
+
     <div class="tga">
       <div class="tga_form" id="form">
-        <input class="tga_form_input" id="input" type="text" value="" >
-        <button class="tga_form_btn" onclick="confirmPostCode()" >Confirm</button>
+        <input class="tga_form_input" id="address" type="text" value="" >
+        <button class="tga_form_btn" onclick="confirmPostCode()" id="submit">Confirm</button>
         <div class="tga_form_error" id="error" >Schade Schokolade! <br>This is not a valid post code</div>
       </div>
+
+      <div class="tga_confirm">
+        <div class="tga_confirm_btn"></div>
+        <div class="tga_confirm_text"></div>
+      </div>
+
       <div class="tga_map" id="map"></div>
     </div>
     <script src="javascript/map.js"></script>
