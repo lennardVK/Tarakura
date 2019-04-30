@@ -26,6 +26,7 @@ function hideConfirmation(){
 
 function confirmation(){
   confirmed = "true";
+  createUser();
   hideConfirmation();
 }
 
