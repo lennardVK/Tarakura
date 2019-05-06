@@ -13,8 +13,9 @@
     <div class="tga">
       <div class="tga_form" id="form">
         <input class="tga_form_input" id="address" type="text" value="" >
+        <input class="tga_form_upload" id="upload" type="file" name="img" multiple>
         <button class="tga_form_btn" id="submit" >Confirm</button>
-        <div class="tga_form_error" id="error" >Schade Schokolade! <br>This is not a valid post code</div>
+        <div class="tga_form_error" id="error" ><h2></h2> <br>This is not a valid post code. <br>Or the File you uploaded is not a jpg.</div>
       </div>
 
       <div class="tga_confirm" id="confirm">
@@ -22,7 +23,7 @@
           Are you sure you want to confirm your Hometown? <br/> 
           There is no return after this step.
         </div>
-        <button class="tga_confirm_btn" onclick="confirmation()">I am sure.</button>
+        <button class="tga_confirm_btn" onclick="confirmation()">Im sure.</button>
         <button class="tga_correct_btn" onclick="showForm()">Im not sure.</button>
       </div>
 
@@ -32,6 +33,8 @@
     
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
+    <script src="javascript/init-firebase.js"></script>
 
     <script src="javascript/map.js"></script>
     <script src="javascript/user.js"></script>
