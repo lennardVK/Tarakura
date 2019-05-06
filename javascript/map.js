@@ -1,8 +1,8 @@
-let post_code = "49090"
 
 
 function initMap() {
 
+  
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.674, lng: -73.945},
     zoom: 2,
@@ -86,15 +86,63 @@ function initMap() {
         stylers: [{color: '#17263c'}]
       }
     ]
-
-    
-    
   })
   var geocoder = new google.maps.Geocoder()
+  const initalPosition = {lat: 52.282416, lng: 8.025453}
+
+  updateMap(geocoder, map)
+  initMainPosition(initalPosition)
+
+  document.getElementById('submit').addEventListener('click', function() {
+    geocodeAddress(geocoder, map)
+  })
+
+  function initMainPosition(position){
+    var marker = new google.maps.Marker({
+      map: map,
+      position: position
+        
+    })
+  }
   
-          document.getElementById('submit').addEventListener('click', function() {
-            geocodeAddress(geocoder, map)
-          })
+
+  function updateMap(geocoder, resultsMap){
+    
+
+    let db = firebase.database().ref('/users')
+    db.on('value', function(snapshot) {
+      
+      let usersObj = snapshot.val()
+      let usersArr = Object.values(usersObj)
+  
+      usersArr.map(obj => {
+        let address = obj.address
+        console.log(address)
+        
+        geocoder.geocode({address}, function(results, status) {
+         
+          if (status === 'OK'  ) {
+            
+            resultsMap.setCenter(results[0].geometry.location)
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+                
+            })
+            
+          } 
+        })
+      })
+    })
+
+
+
+
+    
+  }
+
 }
+  
+
 
 

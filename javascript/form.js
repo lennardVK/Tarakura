@@ -79,7 +79,7 @@ function geocodeAddress(geocoder, resultsMap) {
       var marker = new google.maps.Marker({
         map: resultsMap,
         position: results[0].geometry.location
-        
+          
       })
       hideForm()
     } else {
