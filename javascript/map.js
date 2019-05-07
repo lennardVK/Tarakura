@@ -87,11 +87,11 @@ function initMap() {
       }
     ]
   })
-  var geocoder = new google.maps.Geocoder()
-  const initalPosition = {lat: 52.282416, lng: 8.025453}
+  
 
-  updateMap(geocoder, map)
-  initMainPosition(initalPosition)
+
+  
+
 
   document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map)
@@ -124,22 +124,50 @@ function initMap() {
           if (status === 'OK'  ) {
             
             resultsMap.setCenter(results[0].geometry.location)
-            var marker = new google.maps.Marker({
+            let marker = new google.maps.Marker({
               map: resultsMap,
               position: results[0].geometry.location
                 
             })
+            let markerPos = results[0].geometry.location
+            const initalPosition = {lat: 52.282416, lng: 8.025453}
+            let newPath = [markerPos, initalPosition]
             
+            console.log('newPath',newPath)
+            let flightPath = new google.maps.Polyline({
+              path: newPath,
+              geodesic: true,
+              strokeColor: '#FF0000',
+              strokeOpacity: 1.0,
+              strokeWeight: 2
+            })
+            flightPath.setMap(map);
           } 
+          
         })
+        
+        
       })
     })
-
-
-
-
-    
   }
+
+
+  var geocoder = new google.maps.Geocoder()
+  const initalPosition = {lat: 52.282416, lng: 8.025453}
+
+  updateMap(geocoder, map)
+  initMainPosition(initalPosition)
+
+
+  
+
+  
+
+
+
+
+
+
 
 }
   
