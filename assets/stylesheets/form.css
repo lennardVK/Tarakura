@@ -9,8 +9,7 @@
   
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-right: 30px;
-  padding-left: 30px;
+  
   background: var(--main_bg_color);
   border: solid 1px var(--main_accent_color);
   border-radius: 5px;
