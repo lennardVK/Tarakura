@@ -47,13 +47,14 @@
 
 .tga_form_btn{
   width: 8rem;
-  height: 2rem;
+  height: 3rem;
   cursor: pointer;
   background-color: var(--secondary_bg_color);
   color: #ffffff;
   border: solid 1px var(--main_accent_color);
   margin: 0px auto;
   margin-top: 1rem; 
+  font-size: 1rem;
 }
 
 .tga_form_error{
@@ -70,11 +71,14 @@
 
 .tga_form_wrapper_btn{
   width: 8rem;
-  height: 2rem;
+  height: 3rem;
   cursor: pointer;
   background-color: var(--secondary_bg_color);
   color: #ffffff;
   border: solid 1px var(--main_accent_color);
+  margin: 0px auto;
+  margin-top: 1rem; 
+  font-size: 1rem;
 }
 
 .tga_form_wrapper_field{

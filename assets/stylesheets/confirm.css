@@ -13,8 +13,8 @@
 
 .tga_confirm_wrapper {
   margin: 0px auto;
-  top: 20%;
-  height: 20%;
+  top: 30%;
+  
   margin-top: 150px;
   display: flex;
   flex-direction: column;
@@ -33,23 +33,33 @@
 }
 
 .tga_confirm_text {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  text-align: center
 }
 
-.tga_confirm_btn {
+.tga_confirm_controlls{
+  display: flex;
+  width: 100%;
+  align-content: space-around;
+  margin-top: 1rem;
+}
+
+.tga_confirm_controlls_btn {
   width: 8rem;
-  height: 2rem;
+  height: 3rem;
   cursor: pointer;
   background-color: var(--secondary_bg_color);
   color: #ffffff;
   border: solid 1px var(--main_accent_color);
   margin: 0px auto;
   margin-top: 1rem; 
+  font-size: 1rem;
 }
 
-.tga_correct_btn{
+.tga_correct_controlls_btn{
   width: 8rem;
-  height: 2rem;
+  font-size: 1rem;
+  height: 3rem;
   cursor: pointer;
   background-color: var(--secondary_bg_color);
   color: #ffffff;
