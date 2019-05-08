@@ -4,8 +4,9 @@ function initMap() {
 
   
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.674, lng: -73.945},
-    zoom: 2,
+    center: {lat: 52.282416, lng: 8.025453},
+    disableDefaultUI: true,
+    zoom: 3,
     styles: [
       {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -123,7 +124,7 @@ function initMap() {
          
           if (status === 'OK'  ) {
             
-            resultsMap.setCenter(results[0].geometry.location)
+            
             let marker = new google.maps.Marker({
               map: resultsMap,
               position: results[0].geometry.location

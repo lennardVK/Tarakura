@@ -1,6 +1,7 @@
 let confirm = document.getElementById('confirm')
 let form = document.getElementById('form')
 let upload = document.getElementById('upload')
+let background = document.getElementById('background')
 
 function showError(){
   let error = document.getElementById('error')
@@ -59,9 +60,11 @@ function hideConfirmation(){
 }
 
 function confirmation(){
+  background.style.display="none"
   confirmed = "true"
   createUser()
   hideConfirmation()
+  
 }
 
 function clearForm(){

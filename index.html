@@ -4,6 +4,7 @@
     <title>Styled Maps - Night Mode</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/stylesheets/variables.css">
     <link rel="stylesheet" href="assets/stylesheets/map.css">
     <link rel="stylesheet" href="assets/stylesheets/form.css">
     <link rel="stylesheet" href="assets/stylesheets/confirm.css">
@@ -11,37 +12,51 @@
   <body>
 
     <div class="tga">
-      <div class="tga_form" id="form" >
-        <input class="tga_form_input" id="address" type="text" value="" >
-        <input class="tga_form_upload" id="upload" type="file" name="img" multiple>
+      <div class="tga_form" id="form"  >
+
+        <div class="tga_form_head">
+          <div class="tga_form_head_title">What is your Hometown?</div>
+          <input class="tga_form_input" id="address" type="text" value="" >
+        </div>
+        
+        <div class="tga_form_wrapper">
+          <button class="tga_form_wrapper_btn" >Upload your Image</button>
+          <input class="tga_form_wrapper_field" id="upload" type="file" name="img" multiple>
+        </div>
         <button class="tga_form_btn" id="submit" >Confirm</button>
         <div class="tga_form_error" id="error" ><h2></h2> <br>This is not a valid post code. <br>Or the File you uploaded is not a jpg.</div>
       </div>
 
-      <div class="tga_confirm" id="confirm" > 
-        <div class="tga_confirm_text"> 
-          Are you sure you want to confirm your Hometown? <br/> 
-          There is no return after this step.
+      <div class="tga_confirm" id="background">
+        <div class="tga_confirm_wrapper" id="confirm"  > 
+          <div class="tga_confirm_text"> 
+            Are you sure you want to confirm your Hometown? <br/> 
+            There is no return after this step.
+          </div>
+          <button class="tga_confirm_btn" onclick="confirmation()">Im sure.</button>
+          <button class="tga_correct_btn" onclick="showForm()">Im not sure.</button>
         </div>
-        <button class="tga_confirm_btn" onclick="confirmation()">Im sure.</button>
-        <button class="tga_correct_btn" onclick="showForm()">Im not sure.</button>
       </div>
+      
 
-      <div class="tga_map" id="map"></div>
+      <div class="tga_content">
+        <div class="tga_content_map" id="map"></div>
+      </div>
+      
     </div>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
     
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
-    <script src="javascript/init-firebase.js"></script>
 
+    <script src="javascript/init-firebase.js"></script>
     <script src="javascript/map.js"></script>
     <script src="javascript/user.js"></script>
     <script src="javascript/form.js"></script>
     
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_rNE2p21asnxvoTlrHC6TDqqlM8HDQpE&callback=initMap"
     async defer></script>
   </body>
 </html>
