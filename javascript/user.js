@@ -11,7 +11,7 @@ class User {
 
 function createUser(){
   let address = document.getElementById('address').value
-  let image = "assets/images/cathedral.jpg"
+  let image = ""
   let user = new User(address,image)
   
   const dbRefObject = firebase.database().ref('/users').push(user)
