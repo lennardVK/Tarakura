@@ -2,8 +2,6 @@
 var database = firebase.database()
 let users = []
 
-
-
 class User {
   constructor(address, image) {
     this.address = address

@@ -89,11 +89,6 @@ function initMap() {
     ]
   })
   
-
-
-  
-
-
   document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map)
   })
@@ -101,15 +96,14 @@ function initMap() {
   function initMainPosition(position){
     var marker = new google.maps.Marker({
       map: map,
-      position: position
-        
+      position: position,
+      icon: 'assets/images/school_copy.svg'
     })
   }
   
 
   function updateMap(geocoder, resultsMap){
-    
-
+     
     let db = firebase.database().ref('/users')
     db.on('value', function(snapshot) {
       
@@ -122,14 +116,13 @@ function initMap() {
         
         geocoder.geocode({address}, function(results, status) {
          
-          if (status === 'OK'  ) {
-            
-            
+          if (status === 'OK'  ) {   
             let marker = new google.maps.Marker({
               map: resultsMap,
-              position: results[0].geometry.location
-                
+              position: results[0].geometry.location,
+              icon: 'assets/images/school_copy.svg'
             })
+
             let markerPos = results[0].geometry.location
             const initalPosition = {lat: 52.282416, lng: 8.025453}
             let newPath = [markerPos, initalPosition]
@@ -138,16 +131,14 @@ function initMap() {
             let flightPath = new google.maps.Polyline({
               path: newPath,
               geodesic: true,
-              strokeColor: '#FF0000',
-              strokeOpacity: 1.0,
+              strokeColor: '#3A506B',
+              strokeOpacity: 1,
               strokeWeight: 2
             })
+            
             flightPath.setMap(map);
-          } 
-          
-        })
-        
-        
+          }          
+        }) 
       })
     })
   }
