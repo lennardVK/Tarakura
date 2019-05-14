@@ -6,20 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>camera</title>
   <link rel="stylesheet" href="assets/stylesheets/form.css">
-
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 </head>
 <body>
   <!-- This is just for testing -->
-  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+  
 
   <div class="workspace" id="workspace" style="height:100vh; width:50%; margin : 0px; margin-top : 10rem; display: none;" >
-    <a-scene embedded arjs>
-      <a-marker preset="hiro">
-        <a-box position='0 0.5 0' material='color: yellow;'></a-box>
-      </a-marker>
-      <a-entity camera s></a-entity>
-    </a-scene>
+      <a-scene embedded arjs='sourceType: webcam;'>
+          <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+          <a-marker-camera preset='hiro'></a-marker-camera>
+        </a-scene>
     
   </div>
   <a class="tga_form_link" href='index.html'><button class="camera_remove_btn" >Back</button></a>
