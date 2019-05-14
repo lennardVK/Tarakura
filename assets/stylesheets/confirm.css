@@ -8,7 +8,7 @@
   
   z-index: 10000;
   width: 100vw;
-  background-color: var(--main_transparent_bg_color);
+  background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
 }
 
 .tga_confirm_wrapper {
@@ -48,7 +48,7 @@
   width: 8rem;
   height: 3rem;
   cursor: pointer;
-  background-color: var(--secondary_bg_color);
+  background-color: var(--main_bg_color);
   color: #ffffff;
   border: solid 1px var(--main_accent_color);
   margin: 0px auto;
@@ -61,7 +61,7 @@
   font-size: 1rem;
   height: 3rem;
   cursor: pointer;
-  background-color: var(--secondary_bg_color);
+  background-color: var(--main_bg_color);
   color: #ffffff;
   border: solid 1px var(--main_accent_color);
   margin: 0px auto;

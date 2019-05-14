@@ -1,3 +1,28 @@
+button {
+  border-radius: 5px;
+  border: solid 1px var(--second_accent_color);
+  box-shadow: 7px 7px 11px -6px rgba(0,0,0,0.31);
+  transition: box-shadow 0.2s ease-in;
+}
+
+button:hover {
+  
+  box-shadow: 11px 13px 11px -6px rgba(0,0,0,0.31);
+  transition: box-shadow 0.2s ease-out;
+}
+
+.tga_form_logo{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tga_form_logo_image, .tga_form_logo_headline{
+  margin: 0px auto;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
 
 .tga_form{
   width: 100%;
@@ -10,9 +35,8 @@
   padding-top: 50px;
   padding-bottom: 50px;
   
-  background: var(--main_bg_color);
-  border: solid 1px var(--main_accent_color);
-  border-radius: 5px;
+  background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
+  
   color: #ffffff;
   font-family: Roboto, Arial;
 }
@@ -25,6 +49,8 @@
   align-content: space-around;
   text-align: center;
   padding-bottom: 2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
  
 }
 
@@ -38,24 +64,25 @@
   height: 2rem;
   cursor: text;
   margin: 0px auto;
-  background-color: var(--secondary_bg_color);
-  border: solid 1px var(--main_accent_color);
+  background-color: var(--main_bg_color);
+  border: solid 1px var(--second_accent_color);
   color: #ffffff;
   
   
 }
 
 .tga_form_btn{
-  width: 8rem;
+  width: 20rem;
   height: 3rem;
   cursor: pointer;
-  background-color: var(--secondary_bg_color);
+  background-color: var(--main_bg_color);
   color: #ffffff;
-  border: solid 1px var(--main_accent_color);
+   
   margin: 0px auto;
   margin-top: 1rem; 
   font-size: 1rem;
 }
+
 
 .tga_form_error{
   display: none;
@@ -64,28 +91,23 @@
 }
 .tga_form_wrapper{
   margin: 0px auto;
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
+
 .tga_form_wrapper_btn{
-  width: 8rem;
+  width: 20rem;
   height: 3rem;
   cursor: pointer;
-  background-color: var(--secondary_bg_color);
+  background-color: var(--main_bg_color);
   color: #ffffff;
-  border: solid 1px var(--main_accent_color);
   margin: 0px auto;
   margin-top: 1rem; 
   font-size: 1rem;
 }
 
 .tga_form_wrapper_field{
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
   cursor: pointer;
+  padding-left: 1rem;
 }

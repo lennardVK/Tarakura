@@ -1,7 +1,7 @@
 :root {
-  --main_bg_color: #0B132B;
+  --main_bg_color: #D6D1B1;
   --main_transparent_bg_color: rgba(11,19,43,0.5);
-  --secondary_bg_color: #1C2541;
-  --main_accent_color: #3A506B;
-  --second_accent_color: #6FFFE9;
+  --secondary_bg_color: #F0B67F;
+  --main_accent_color: #FE5F55;
+  --second_accent_color: #C7EFCF;
 }
