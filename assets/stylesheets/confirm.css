@@ -24,9 +24,6 @@
   padding-bottom: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
-  background: var(--main_bg_color);
-  border: solid 1px var(--main_accent_color);
-  border-radius: 5px;
   color: #ffffff;
   font-family: Roboto, Arial;
   display: none;
@@ -45,25 +42,29 @@
 }
 
 .tga_confirm_controlls_btn {
-  width: 8rem;
+  width: 20rem;
   height: 3rem;
   cursor: pointer;
   background-color: var(--main_bg_color);
   color: #ffffff;
-  border: solid 1px var(--main_accent_color);
   margin: 0px auto;
   margin-top: 1rem; 
   font-size: 1rem;
+  margin-right: 1rem;
 }
 
 .tga_correct_controlls_btn{
-  width: 8rem;
-  font-size: 1rem;
+  width: 20rem;
   height: 3rem;
   cursor: pointer;
   background-color: var(--main_bg_color);
   color: #ffffff;
-  border: solid 1px var(--main_accent_color);
   margin: 0px auto;
   margin-top: 1rem; 
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+video{
+  display:none !important
 }
