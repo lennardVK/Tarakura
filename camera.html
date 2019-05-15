@@ -13,30 +13,40 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
-        
+    
         <a-scene embedded arjs="trackingMethod:best;">
-            <a-camera>
-            </a-camera>
-            <a-anchor hit-testing.enabled="true">
+          <a-assets>
+              <a-asset-item id="airplane_asset_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/campus_big.mtl"></a-asset-item>
+              <a-asset-item id="airplane_asset_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/campus_big.obj"></a-asset-item>
+          </a-assets>
+            
 
-                <!-- 3d element-->
-                <a-sphere id="sphere" position="1 0.5 0">
-                    <a-animation attribute="rotation"
-                                 dur="10000"
-                                 fill="forwards"
-                                 to="0 360 0"
-                                 repeat="indefinite"></a-animation>
-                </a-sphere>
-                <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-                <!---
-                <a-entity gltf-model-next=”src: url(test.gltf);” > </a-entity>
-                -->
-            </a-anchor>
-            <a-camera-static/>
+          <a-camera>
+          </a-camera>
+            
+            
+            <a-marker preset='hiro'>
+                
+                <a-entity obj-model="obj: #airplane_asset_obj; mtl: #airplane_asset_mtl" scale="0.002 0.002 0.002"></a-entity>
+                      
+            </a-marker>
+             
+           
+          <a-camera-static/>
         </a-scene>
 
-  <a class="tga_form_link" href='index.html'><button class="camera_remove_btn" >Back</button></a>
-  
+
+
+  <input class="tga_form_link" type="file" accept="image/*;capture=camera">
+
+  <a class="tga_form_link" href='index.html'>
+    <button class="camera_remove_btn" >Back</button>
+    <img src="" alt="" id="screen">
+  </a>
+
+  <script>
+
+  </script>
 
  
 </body>
