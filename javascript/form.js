@@ -24,22 +24,14 @@ function fileValidation(){
 
 upload.addEventListener('change', function(e){
   let file = e.target.files[0]
-  console.log(file)
-
-  
   let storageRef = firebase.storage().ref('images/'+ file.name)
   let task = storageRef.put(file)
-
-  
-
-  console.log('event')
 })
 
 function hideForm(){
   if (fileValidation()){
     form.style.display = "none"
     showConfirmation()
-    
   } else{
     showError()
   }
