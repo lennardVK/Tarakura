@@ -1,6 +1,6 @@
 
 var database = firebase.database()
-let currentUserId = Math.random(0,999999999999)
+
 let users = []
 
 class User {

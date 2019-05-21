@@ -4,10 +4,6 @@ let currentImgUrl = ""
 
 
 
-function updateUser(){
-  console.log('user is updated')
-}
-
   
 function getSnapshot(){
   
@@ -49,7 +45,7 @@ function submit(){
   let storageRef = firebase.storage().ref('images/'+ blob)
   let task = storageRef.put(blob)
   //disableBtn(document.getElementById('snapshot'))
-  updateUser()
+  
   hidePreview()
   
   console.log('upload')
