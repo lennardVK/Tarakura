@@ -1,8 +1,13 @@
 button {
   border-radius: 5px;
-  border: solid 1px var(--second_accent_color);
   box-shadow: 7px 7px 11px -6px rgba(0,0,0,0.31);
   transition: box-shadow 0.2s ease-in;
+  border: none;
+  
+    
+}
+button:focus{
+  outline: none;
 }
 
 button:hover {
@@ -96,7 +101,7 @@ button:hover {
   width: 20rem;
   height: 3rem;
   cursor: pointer;
-  background-color: var(--main_bg_color);
+  background-color: var(--main_accent_color);
   color: #ffffff;
   margin: 0px auto;
   margin-top: 1rem; 
@@ -110,6 +115,7 @@ button:hover {
 
 .tga_form_link{
   margin: 0px auto;
+  z-index: 1000000;
 }
 
 

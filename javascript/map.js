@@ -89,11 +89,14 @@ function initMap() {
     ]
   })
   
-  document.getElementById('submit').addEventListener('click', function() {
+  function confirm(){
+    console.log('update')
     geocodeAddress(geocoder, map)
-  })
-
+  }
+    
+  
   function initMainPosition(position){
+    
     var marker = new google.maps.Marker({
       map: map,
       position: position,

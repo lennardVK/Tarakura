@@ -19,7 +19,7 @@
         
         
       <div class="tga_form" id="form" >
-          <canvas id="mycanvas">
+         
 
         <div class="tga_form_logo">
           <img class="tga_form_logo_image" src="assets/images/logo.svg" alt="">
@@ -28,7 +28,7 @@
           </div>
         </div>
         
-          </canvas>
+         
         <div class="tga_form_head"> 
           <div class="tga_form_head_title">What is your Hometown?</div>
           <input class="tga_form_input" id="address" type="text" value="" >
@@ -36,11 +36,10 @@
         
         <div class="tga_form_wrapper">
           <div>Upload an Image to show your Dream Campus</div>
-          <input class="tga_form_wrapper_field" id="upload" type="file" name="img" src="assets/images/upload.svg" multiple>
         </div>
 
-        <a class="tga_form_link"  href='camera.html'><button class="tga_form_btn" >Make a Photo</button></a>
-        <button class="tga_form_btn" id="submit" >Confirm</button>
+        <a class="tga_form_link" href="camera.html" onclick="confirmation()" ><button class="tga_form_btn" >Make a Photo</button></a>
+       
 
         <div class="tga_form_error" id="error" ><h2></h2> <br>This is not a valid post code. <br>Or the File you uploaded is not a jpg.</div>
       </div>
@@ -52,8 +51,8 @@
             There is no return after this step.
           </div>
           <div class="tga_confirm_controlls">
-              <button class="tga_confirm_controlls_btn" onclick="confirmation()">Im sure.</button>
-              <button class="tga_correct_controlls_btn" onclick="showForm()">Im not sure.</button>
+            <button class="tga_confirm_controlls_btn" onclick="confirmation()">Im sure.</button>
+            <button class="tga_correct_controlls_btn" onclick="showForm()">Im not sure.</button>
           </div>
           
         </div>
@@ -65,9 +64,7 @@
     </div>
     
     <script src="javascript/app.js"></script>
-
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
-    
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js"></script>
@@ -77,9 +74,8 @@
     <script src="javascript/user.js"></script>
     <script src="javascript/form.js"></script>
     <script src="javascript/ar.js"></script>
+    <script src="javascript/camera.js"></script>
     
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_rNE2p21asnxvoTlrHC6TDqqlM8HDQpE&callback=initMap"
-    async defer></script>
   </body>
 </html>

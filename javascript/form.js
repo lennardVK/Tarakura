@@ -1,7 +1,8 @@
 let confirm = document.getElementById('confirm')
 let form = document.getElementById('form')
-let upload = document.getElementById('upload')
+let currentAddress
 let background = document.getElementById('background')
+
 
 function showError(){
   let error = document.getElementById('error')
@@ -21,12 +22,6 @@ function fileValidation(){
     return false
   }
 }
-
-upload.addEventListener('change', function(e){
-  let file = e.target.files[0]
-  let storageRef = firebase.storage().ref('images/'+ file.name)
-  let task = storageRef.put(file)
-})
 
 function hideForm(){
   if (fileValidation()){
@@ -54,6 +49,7 @@ function hideConfirmation(){
 function confirmation(){
   background.style.display="none"
   confirmed = "true"
+  currentAddress =  document.getElementById('address').value
   createUser()
   hideConfirmation()
   
