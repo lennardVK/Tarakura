@@ -1,0 +1,88 @@
+body{
+  font-family: Roboto, Arial;
+}
+
+.camera_controlls{
+  position: absolute;
+  margin: 2rem;
+  left: 2rem;
+  bottom: 2rem;
+  z-index: 1000000;
+  display: flex;
+  width: 100%;
+}
+
+.camera_remove_link{
+  margin: 0px auto;
+  z-index: 1000000;
+}
+
+.camera_controlls_link_back{
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  background-color: var(--main_accent_color);
+  color: #ffffff;
+  margin: 0px auto;
+  margin-top: 1rem; 
+  font-size: 1rem;
+  border-radius: 100px;
+
+}
+
+.camera_controlls_container{
+  display: flex;
+  flex-direction: column;
+}
+
+.camera_controlls_container_snapshot{
+  width: 20rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: var(--main_accent_color);
+  color: #ffffff;
+  margin: 0px auto;
+  margin-top: 1rem; 
+  font-size: 1rem;
+}
+
+.camera_preview{
+  overflow: hidden;
+  position: absolute;
+  border-radius: 5px;
+  margin: 2rem auto;
+  left: 2rem;
+  bottom: 10rem;
+  width: 60%;
+  height: 0rem;
+  
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main_accent_color);
+  color: #ffffff;
+  font-size: 1rem;
+  align-items: center;
+  transition: height 0.5s ease-out;
+
+}
+
+.camera_preview_controlls{
+  display: flex;
+  flex-direction: row;
+}
+
+.camera_preview_controlls_close, .camera_preview_controlls_link_btn{
+  width: 20rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: var(--main_accent_color);
+  color: #ffffff;
+  margin: 0px auto;
+  margin-top: 1rem; 
+  font-size: 1rem;
+}
+
+.camera_preview_image{
+  max-width: 90%;
+  max-height: 90%;
+}

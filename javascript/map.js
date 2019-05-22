@@ -4,9 +4,9 @@ function initMap() {
 
   
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 52.282416, lng: 8.025453},
+    center: {lat: 32.282416, lng: 10.025453},
     disableDefaultUI: true,
-    zoom: 3,
+    zoom: 2.5,
     styles: [
       {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
       {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -88,12 +88,16 @@ function initMap() {
       }
     ]
   })
+  map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true})
   
-  document.getElementById('submit').addEventListener('click', function() {
+  function confirm(){
+    console.log('update')
     geocodeAddress(geocoder, map)
-  })
-
+  }
+    
+  
   function initMainPosition(position){
+    
     var marker = new google.maps.Marker({
       map: map,
       position: position,
@@ -101,6 +105,7 @@ function initMap() {
     })
   }
   
+  var storage = firebase.storage()
 
   function updateMap(geocoder, resultsMap){
      
@@ -109,18 +114,40 @@ function initMap() {
       
       let usersObj = snapshot.val()
       let usersArr = Object.values(usersObj)
-  
+      var storageRef = storage.ref()
+      var rootRef = storageRef
+      console.log('rootRef', rootRef.bucket)
+      
       usersArr.map(obj => {
-        let address = obj.address
-        console.log(address)
+      let index = 0
+      index = index ++  
+      let arrayOfIds = [obj.userId]
+        console.log('arrayOfIds', arrayOfIds[index])
+      })
+
+      usersArr.map(obj => {
+        let address = obj.address  
+        let index = 0
+        index = index ++  
+        let arrayOfIds = [obj.userId]
+        console.log(arrayOfIds[index])
+        var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f')
         
+
         geocoder.geocode({address}, function(results, status) {
-         
-          if (status === 'OK'  ) {   
+          
+          if (status === 'OK'  ) { 
+            
+            var icon = {
+              url: 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f', // url
+              scaledSize: new google.maps.Size(80, 50), // scaled size
+              origin: new google.maps.Point(0,0), // origin
+              anchor: new google.maps.Point(0, 0) // anchor
+            }
             let marker = new google.maps.Marker({
               map: resultsMap,
               position: results[0].geometry.location,
-              icon: 'assets/images/school_copy.svg'
+              icon
             })
 
             let markerPos = results[0].geometry.location
@@ -136,7 +163,7 @@ function initMap() {
               strokeWeight: 2
             })
             
-            flightPath.setMap(map);
+            flightPath.setMap(map)
           }          
         }) 
       })
