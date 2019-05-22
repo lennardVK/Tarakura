@@ -19,15 +19,15 @@
       </canvas>
     <a-scene embedded arjs="trackingMethod:best;">
       <a-assets>
-        <a-asset-item id="airplane_asset_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/book.mtl"></a-asset-item>
-        <a-asset-item id="airplane_asset_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/book.obj"></a-asset-item>
+        <a-asset-item id="mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/campus.mtl"></a-asset-item>
+        <a-asset-item id="obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/campus.obj"></a-asset-item>
       </a-assets>
 
       <a-camera>
       </a-camera>
 
       <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/test.patt'>  
-        <a-entity obj-model="obj: #airplane_asset_obj; mtl: #airplane_asset_mtl" scale="0.01 0.01 0.01"></a-entity> 
+        <a-entity obj-model="obj: #obj; mtl: #mtl" position="0 2 -1" scale="0.006 0.006 0.006"></a-entity> 
       </a-marker>  
     </a-scene>
     
@@ -35,7 +35,7 @@
     <img class="camera_preview_image" id="image_element" src="" alt="">
     <div class="camera_preview_controlls">
       <button class="camera_preview_controlls_close" onclick="hidePreview()">Close</button>
-      <a class="camera_preview_controlls_link"   onclick="submit()" >
+      <a class="camera_preview_controlls_link" onclick="submit ('map.html')" >
         <button class="camera_preview_controlls_link_btn" >Confirm</button>
       </a>
     </div>
@@ -59,7 +59,7 @@
 
   <script src="javascript/init-firebase.js"></script>
   <script src="javascript/map.js"></script>
-  <script src="javascript/user.js"></script>
+  
   <script src="javascript/form.js"></script>
   <script src="javascript/ar.js"></script>
   <script src="javascript/camera.js"></script>

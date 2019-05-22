@@ -2,6 +2,12 @@ let preview = document.getElementById('preview')
 let imageElement = document.getElementById('image_element')
 let currentImgUrl = ""
 
+let currentId = localStorage.getItem('session')
+currentId = JSON.parse(currentId)[0].userId;
+currentId.toString()
+
+//let currentId = Math.floor(Math.random() * Math.floor(99999999999))
+console.log('currentId',currentId)
 
 
   
@@ -26,28 +32,38 @@ function getSnapshot(){
   showPreview()
 }
 
-function submit(){
+function delay (URL) {
+  setTimeout( function() { window.location = URL }, 500 );
+}
+
+function submit(URL){
   
-  let byteString = atob(currentImgUrl.split(',')[1]);
+  let byteString = atob(currentImgUrl.split(',')[1])
   
   let mimeString = currentImgUrl.split(',')[0].split(':')[1].split(';')[0]
 
-  let ab = new ArrayBuffer(byteString.length);
+  let ab = new ArrayBuffer(byteString.length)
 
-  let ia = new Uint8Array(ab);
+  let ia = new Uint8Array(ab)
 
   for (let i = 0; i < byteString.length; i++) {
-      ia[i] = byteString.charCodeAt(i);
+    ia[i] = byteString.charCodeAt(i);
   }
 
-  let blob = new Blob([ab], {type: mimeString});
+  let blob = new Blob([ab], {type: mimeString})
+  console.log('currentId: ',currentId)
+  let storageRef = firebase.storage().ref(""+currentId+"")
+  
 
-  let storageRef = firebase.storage().ref('images/'+ blob)
-  let task = storageRef.put(blob)
+
+  
+  storageRef.put(blob).then(function(snapshot) {
+    console.log('Uploaded a blob or file!')
+  })
   //disableBtn(document.getElementById('snapshot'))
   
   hidePreview()
-  
+  delay (URL)
   console.log('upload')
 }
 
