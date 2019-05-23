@@ -33,7 +33,7 @@ function getSnapshot(){
 }
 
 function delay (URL) {
-  setTimeout( function() { window.location = URL }, 500 );
+  setTimeout( function() { window.location = URL }, 2000 );
 }
 
 function submit(URL){

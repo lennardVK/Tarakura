@@ -47,9 +47,11 @@ function hideConfirmation(){
 }
 
 function confirmation(){
-  background.style.display="none"
+  
+  
   confirmed = "true"
   currentAddress =  document.getElementById('address').value
+  console.log('currentId')
   createUser()
   hideConfirmation()
   
