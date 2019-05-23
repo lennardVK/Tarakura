@@ -4,4 +4,5 @@
   --secondary_bg_color: #F0B67F;
   --main_accent_color: #FE5F55;
   --second_accent_color: #C7EFCF;
+  --main_bg: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
 }
