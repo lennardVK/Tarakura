@@ -8,18 +8,18 @@ function initMap() {
     disableDefaultUI: true,
     zoom: 2.5,
     styles: [
-      {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
-      {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
-      {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+      {elementType: 'geometry', stylers: [{color: '#F0B67F'}]},
+      {elementType: 'labels.text.stroke', stylers: [{color: '#FE5F55'}]},
+      {elementType: 'labels.text.fill', stylers: [{color: '#FFFFFF'}]},
       {
         featureType: 'administrative.locality',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
+        stylers: [{color: '#FE5F55'}]
       },
       {
         featureType: 'poi',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
+        stylers: [{color: '#FE5F55'}]
       },
       {
         featureType: 'poi.park',
@@ -29,7 +29,7 @@ function initMap() {
       {
         featureType: 'poi.park',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#6b9a76'}]
+        stylers: [{color: '#FE5F55'}]
       },
       {
         featureType: 'road',
@@ -44,7 +44,7 @@ function initMap() {
       {
         featureType: 'road',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#9ca5b3'}]
+        stylers: [{color: '#FE5F55'}]
       },
       {
         featureType: 'road.highway',
@@ -69,26 +69,26 @@ function initMap() {
       {
         featureType: 'transit.station',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#d59563'}]
+        stylers: [{color: '#C7EFCF'}]
       },
       {
         featureType: 'water',
         elementType: 'geometry',
-        stylers: [{color: '#17263c'}]
+        stylers: [{color: '#C7EFCF'}]
       },
       {
         featureType: 'water',
         elementType: 'labels.text.fill',
-        stylers: [{color: '#515c6d'}]
+        stylers: [{color: '#FFFFFF'}]
       },
       {
         featureType: 'water',
         elementType: 'labels.text.stroke',
-        stylers: [{color: '#17263c'}]
+        stylers: [{color: '#FE5F55'}]
       }
     ]
   })
-  map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true})
+  map.setOptions({draggable: true, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true})
   
   function confirm(){
     console.log('update')
@@ -101,7 +101,7 @@ function initMap() {
     var marker = new google.maps.Marker({
       map: map,
       position: position,
-      icon: 'assets/images/school_copy.svg'
+      icon: 'assets/images/initial_position.svg'
     })
   }
   
@@ -139,15 +139,15 @@ function initMap() {
           if (status === 'OK'  ) { 
             
             var icon = {
-              url:  'assets/images/school_copy.svg',
-              scaledSize: new google.maps.Size(80, 50), // scaled size
-              origin: new google.maps.Point(0,0), // origin
-              anchor: new google.maps.Point(0, 0) // anchor
+              url:  'assets/images/marker.svg',
+              scaledSize: new google.maps.Size(50, 50), // scaled size
+              
             }
             let y = 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f'
             let x = "" + y + ""
             let currentWindow = "<div style='float:left; background-color:#FE5F55;'><img style='width: 300px; height: 200px; ' src=" + x + "></div>"
             console.log(currentWindow)
+
             let infowindow =  new google.maps.InfoWindow({  
               content: currentWindow,
               position: results[0].geometry.location
@@ -156,7 +156,7 @@ function initMap() {
             let marker = new google.maps.Marker({
               map: resultsMap,
               position: results[0].geometry.location,
-              icon: 'assets/images/school_copy.svg'
+              icon
             })
 
             let active = false
@@ -183,7 +183,7 @@ function initMap() {
             let flightPath = new google.maps.Polyline({
               path: newPath,
               geodesic: true,
-              strokeColor: '#3A506B',
+              strokeColor: '#FE5F55',
               strokeOpacity: 1,
               strokeWeight: 2
             })
