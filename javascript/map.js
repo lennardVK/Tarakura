@@ -139,7 +139,7 @@ function initMap() {
           if (status === 'OK'  ) { 
             
             var icon = {
-              url:  'assets/images/marker.svg',
+              url:  'assets/images/marker_animated.svg',
               scaledSize: new google.maps.Size(50, 50), // scaled size
               
             }
