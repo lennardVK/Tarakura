@@ -159,9 +159,18 @@ function initMap() {
               icon: 'assets/images/school_copy.svg'
             })
 
+            let active = false
             google.maps.event.addListener(marker, 'click', function() {
-              infowindow.open(map, this);
+              if(active == true){
+                active = false
+                infowindow.close()
+              }else if(active == false){
+                active = true
+                infowindow.open(map, this)
+              } 
             });
+            
+            
             
             
             
