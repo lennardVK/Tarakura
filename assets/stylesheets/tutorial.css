@@ -96,6 +96,10 @@ body{
   font-size: 1rem;
 }
 
+.tutorial_finish_btn:focus{
+  outline: none;
+}
+
 .tutorial_finish_btn:hover {
   
   box-shadow: 11px 13px 11px -6px rgba(0,0,0,0.31);

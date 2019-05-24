@@ -139,17 +139,33 @@ function initMap() {
           if (status === 'OK'  ) { 
             
             var icon = {
-              url: 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f', // url
+              url:  'assets/images/school_copy.svg',
               scaledSize: new google.maps.Size(80, 50), // scaled size
               origin: new google.maps.Point(0,0), // origin
               anchor: new google.maps.Point(0, 0) // anchor
             }
+            let y = 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f'
+            let x = "" + y + ""
+            let currentWindow = "<div style='float:left; background-color:#FE5F55;'><img style='width: 300px; height: 200px; ' src=" + x + "></div>"
+            console.log(currentWindow)
+            let infowindow =  new google.maps.InfoWindow({  
+              content: currentWindow,
+              position: results[0].geometry.location
+            });
+
             let marker = new google.maps.Marker({
               map: resultsMap,
               position: results[0].geometry.location,
-              icon
+              icon: 'assets/images/school_copy.svg'
             })
 
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(map, this);
+            });
+            
+            
+            
+            
             let markerPos = results[0].geometry.location
             const initalPosition = {lat: 52.282416, lng: 8.025453}
             let newPath = [markerPos, initalPosition]

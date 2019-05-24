@@ -62,7 +62,8 @@ button:hover {
 .tga_form_input {
   width: 20rem;
   font-size: 1rem;
-  height: 2rem;
+  height: 2.5rem;
+  border-radius: 20px;
   cursor: text;
   margin: 0px auto;
   background-color: var(--main_bg_color);
@@ -76,9 +77,10 @@ button:hover {
   width: 20rem;
   height: 3rem;
   cursor: pointer;
-  background-color: var(--main_bg_color);
+  background-color: var(--main_accent_color);
   color: #ffffff;
-   
+  border-radius: 200px;
+  text-transform: uppercase;
   margin: 0px auto;
   margin-top: 1rem; 
   font-size: 1rem;
@@ -129,7 +131,7 @@ button:hover {
   width: 20rem;
   height: 3rem;
   cursor: pointer;
-  background-color: var(--main_bg_color);
+  background-color: var(--main_accent_color);
   color: #ffffff;
   margin: 0px auto;
   margin-top: 1rem; 
