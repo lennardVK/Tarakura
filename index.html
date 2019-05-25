@@ -24,7 +24,7 @@
          
 
         <div class="tga_form_logo">
-          <img class="tga_form_logo_image" src="assets/images/logo.svg" alt="">
+          <img class="tga_form_logo_image"  style="width: 196px; height:217px"src="assets/images/logo_animated.svg" alt="">
           <div class="tga_form_logo_headline">
               <h1>Tarakura</h1>
           </div>
@@ -32,15 +32,12 @@
         
          
         <div class="tga_form_head"> 
-          <div class="tga_form_head_title">What is your Hometown?</div>
+          <div class="tga_form_head_title">Please type in your Hometown</div>
           <input class="tga_form_input" id="address" type="text" value="" >
         </div>
-        
-        <div class="tga_form_wrapper">
-          <div>Upload an Image to show your Tarakura</div>
-        </div>
+       
 
-        <a class="tga_form_link" href="camera.html" onclick="confirmation()" ><button class="tga_form_btn" >Take a look! O_O</button></a>
+        <a class="tga_form_link" href="camera.html" onclick="confirmation()" ><button class="tga_form_btn" >Take a look!</button></a>
        
 
         <div class="tga_form_error" id="error" ><h2></h2> <br>This is not a valid City.</div>
@@ -63,6 +60,10 @@
       <div class="tga_content" id="content" >
         <div class="tga_content_map" id="map"></div>
       </div>
+      <a class="tga_form_link" href="tutorial.html">
+          <button id="back_btn" class="tga_btn">Back to tutorial</button>
+      </a>
+      
     </div>
     
     <script src="javascript/app.js"></script>

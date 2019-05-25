@@ -3,6 +3,15 @@ let form = document.getElementById('form')
 let currentAddress
 let background = document.getElementById('background')
 
+function getCookie(cookie){
+  console.log(cookie)
+  if(cookie){
+    window.location.href = "map.html"
+  } else{
+    console.log('no cookie found')
+  }
+}
+getCookie(document.cookie)
 
 function showError(){
   let error = document.getElementById('error')
