@@ -1,6 +1,6 @@
 body{
   background: linear-gradient(234deg, #c7efcf, #f0b67f);
-  background-size: 400% 400%;  
+  background-size: 200% 200%;  
   -webkit-animation: AnimationName 11s ease infinite;
   -moz-animation: AnimationName 11s ease infinite;
   animation: AnimationName 11s ease infinite;
