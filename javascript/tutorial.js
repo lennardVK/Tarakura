@@ -8,11 +8,9 @@ let index = 0
 
 function moveRight(){
   index = index + 100
-  console.log(index)
   if (index >= 400){
     index = 300;
   }else {
-    console.log('moveRight')
     arr.map(obj => {
       let currentLeft = parseInt(obj.style.left,10);
       let newLeft = currentLeft - 100
@@ -23,9 +21,7 @@ function moveRight(){
 }
 
 function moveLeft(){
-  
   index = index - 100
-  console.log(index)
   if (index <= -100){
     index = 0;
   }else {
@@ -40,10 +36,8 @@ function moveLeft(){
 
 function checkIndex(){
   if(index == 0){
-    
     leftCntrl.style.display = "none"
   } else if( index == 300) {
-    console.log('checked')
     rightCntrl.style.display = "none"
   } else{
     leftCntrl.style.display = "block"
