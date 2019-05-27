@@ -22,13 +22,19 @@
       <a-assets>
         <a-asset-item id="mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.mtl"></a-asset-item>
         <a-asset-item id="obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.obj"></a-asset-item>
+
+        <a-asset-item id="book_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/book.mtl"></a-asset-item>
+        <a-asset-item id="book_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/book.obj"></a-asset-item>
       </a-assets>
 
       <a-camera>
       </a-camera>
 
-      <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/test.patt'>  
+      <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/firsttest.patt'>  
         <a-entity obj-model="obj: #obj; mtl: #mtl" position="0 2 -1" scale="0.006 0.006 0.006"></a-entity> 
+      </a-marker>  
+      <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/test.patt'>  
+        <a-entity obj-model="obj: #book_obj; mtl: #book_mtl" position="0 2 -1" scale="0.006 0.006 0.006"></a-entity> 
       </a-marker>  
     </a-scene>
     
