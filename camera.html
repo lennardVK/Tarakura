@@ -18,7 +18,7 @@
 
     <canvas id="mycanvas" style="position:absolute; display:none">
     </canvas>
-    <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80;">
+    <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true">
       <a-assets>
         <a-asset-item id="mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.mtl"></a-asset-item>
         <a-asset-item id="obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.obj"></a-asset-item>
@@ -30,8 +30,8 @@
       <a-camera>
       </a-camera>
 
-      <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/wisdom.patt'>  
-        <a-entity obj-model="obj: #obj; mtl: #mtl" position="0 2 -1" scale="0.006 0.006 0.006" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+      <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/wisdom_75.patt'>  
+        <a-entity obj-model="obj: #threes_animated_obj; mtl: #threes_animated_mtl" position="0 1 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
       </a-marker>  
       <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/test.patt'>  
         <a-entity obj-model="obj: #threes_animated_obj; mtl: #threes_animated_mtl" position="0 2 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
