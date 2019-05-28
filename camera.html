@@ -17,35 +17,47 @@
 <body >
 
     <canvas id="mycanvas" style="position:absolute; display:none">
-      </canvas>
-    <a-scene embedded arjs="trackingMethod:best;">
+    </canvas>
+    <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true">
       <a-assets>
         <a-asset-item id="mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.mtl"></a-asset-item>
         <a-asset-item id="obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.obj"></a-asset-item>
+
+        <a-asset-item id="threes_animated_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/threes_animated.mtl"></a-asset-item>
+        <a-asset-item id="threes_animated_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/threes_animated.obj"></a-asset-item>
       </a-assets>
 
       <a-camera>
       </a-camera>
 
+      <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/wisdom_75.patt'>  
+        <a-entity obj-model="obj: #threes_animated_obj; mtl: #threes_animated_mtl" position="0 1 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
+      </a-marker>  
       <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/test.patt'>  
-        <a-entity obj-model="obj: #obj; mtl: #mtl" position="0 2 -1" scale="0.006 0.006 0.006"></a-entity> 
+        <a-entity obj-model="obj: #threes_animated_obj; mtl: #threes_animated_mtl" position="0 2 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
       </a-marker>  
     </a-scene>
     
-  <div class="camera_preview" id="preview">
-    <img class="camera_preview_image" id="image_element" src="" alt="">
-    <div class="camera_preview_controlls">
-      <button class="camera_preview_controlls_close" onclick="hidePreview()">Close</button>
-      <a class="camera_preview_controlls_link" onclick="submit ('map.html')" >
-        <button class="camera_preview_controlls_link_btn" >Confirm</button>
-      </a>
+
+  <div class="wrapper" id="preview">
+    <div class="camera_preview" id="preview">
+      <img class="camera_preview_image" id="image_element" src="" alt="">
+      <div class="camera_preview_controlls">
+        <button class="camera_preview_controlls_close" onclick="hidePreview()">Close</button>
+        <a class="camera_preview_controlls_link" onclick="submit ('map.html')" >
+          <button class="camera_preview_controlls_link_btn" >Confirm</button>
+        </a>
+      </div>
     </div>
   </div>
+  
+
   <div class="camera_controlls">
-      
+      <!--
       <a class="camera_controlls_link" href='index.html'>
         <button class="camera_controlls_link_back" >Back</button>
       </a>
+      -->
       <div class="camera_controlls_container">
         <button class="camera_controlls_container_snapshot" id="snapshot"  onclick="getSnapshot()">Snapshot</button>
       </div>

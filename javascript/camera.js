@@ -36,6 +36,8 @@ function delay (URL) {
   setTimeout( function() { window.location = URL }, 2000 );
 }
 
+
+
 function submit(URL){
   
   let byteString = atob(currentImgUrl.split(',')[1])

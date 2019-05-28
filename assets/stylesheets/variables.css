@@ -5,4 +5,19 @@
   --main_accent_color: #FE5F55;
   --second_accent_color: #C7EFCF;
   --main_bg: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
+  --main-bg-animate: linear-gradient(268deg, #c7efcf, #fe5f55); 
+}
+
+#back_btn{
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: #FFFFFF;
+  font-size: 1rem;
+  background-color: var(--main_bg_color);
+  z-index: 100000;
+  padding: 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
 }

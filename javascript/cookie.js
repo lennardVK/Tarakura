@@ -1,22 +1,14 @@
-const cookieId = Math.floor(Math.random() * Math.floor(99999999999))
 
 function setCookie(){
-  let cookie = "cookieId= " + cookieId + ""
-  document.cookie = cookie;
+  let currentId = localStorage.getItem('session')
+  currentId = JSON.parse(currentId)[0].userId;
+  currentId.toString()
+  let newCookie = "id=" + currentId + ";path=/"
+  document.cookie = newCookie
+  console.log('cookie setted', document.cookie)
 }
+setCookie()
 
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
+function readCookie(){
+  console.log('cookie setted', document.cookie)
 }

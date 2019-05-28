@@ -1,8 +1,5 @@
 
-
 function initMap() {
-
-  
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 32.282416, lng: 10.025453},
     disableDefaultUI: true,
@@ -141,7 +138,6 @@ function initMap() {
             var icon = {
               url:  'assets/images/marker_animated.svg',
               scaledSize: new google.maps.Size(50, 50), // scaled size
-              
             }
             let y = 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f'
             let x = "" + y + ""

@@ -3,6 +3,16 @@ let form = document.getElementById('form')
 let currentAddress
 let background = document.getElementById('background')
 
+function getCookie(cookie){
+  console.log(cookie)
+  if(cookie){
+    window.location.href = "map.html"
+  } else{
+    console.log('no cookie found')
+  }
+}
+
+
 
 function showError(){
   let error = document.getElementById('error')
@@ -47,14 +57,12 @@ function hideConfirmation(){
 }
 
 function confirmation(){
-  
-  
   confirmed = "true"
   currentAddress =  document.getElementById('address').value
   console.log('currentId')
   createUser()
   hideConfirmation()
-  
+  getCookie(document.cookie)
 }
 
 function clearForm(){
