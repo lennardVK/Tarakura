@@ -11,7 +11,8 @@ function getCookie(cookie){
     console.log('no cookie found')
   }
 }
-getCookie(document.cookie)
+
+
 
 function showError(){
   let error = document.getElementById('error')
@@ -56,14 +57,12 @@ function hideConfirmation(){
 }
 
 function confirmation(){
-  
-  
   confirmed = "true"
   currentAddress =  document.getElementById('address').value
   console.log('currentId')
   createUser()
   hideConfirmation()
-  
+  getCookie(document.cookie)
 }
 
 function clearForm(){
