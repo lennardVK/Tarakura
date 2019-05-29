@@ -134,3 +134,28 @@ button:hover {
   margin-top: 1rem; 
   font-size: 1rem;
 }
+img {
+  width: 196px; 
+  height:217px
+}
+
+@media(max-width: 330px){
+  .tga_form_logo img {
+    width: 136px; 
+    height:157px;
+    padding-top: 0;
+  }
+
+  .tga_form_head{
+    width: 60%;
+  }
+
+  .tga_form_link{
+    width: 60%;
+  }
+
+  #back_btn{
+    left: 0;
+    margin: 0px auto;
+  }
+}

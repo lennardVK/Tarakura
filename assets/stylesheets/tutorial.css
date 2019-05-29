@@ -41,8 +41,34 @@ body{
   margin-bottom: 2rem;
   font-size: 2rem;
   text-transform: uppercase;
-  
 }
+
+img{
+  width: 176px; 
+  height:197px
+}
+
+@media (max-width: 330px){
+  #headline {
+    font-size: 1rem;
+  }
+
+  .tutorial_step_content{
+    font-size: 0.8rem;
+  }
+
+  img{
+    width: 156px; 
+    height: 107px;
+  }
+
+  .tutorial_controlls img{
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+
 
 .tutorial_controlls{
   display: flex;
