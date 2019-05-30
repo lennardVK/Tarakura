@@ -48,7 +48,7 @@ img{
   height:197px
 }
 
-@media (max-width: 330px){
+@media (max-width: 411px){
   #headline {
     font-size: 1rem;
   }
@@ -112,7 +112,6 @@ img{
 
 .tutorial_finish_btn{
   padding: 1rem;
-  
   cursor: pointer;
   background-color: var(--main_accent_color);
   color: #ffffff;

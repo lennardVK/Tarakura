@@ -134,12 +134,13 @@ button:hover {
   margin-top: 1rem; 
   font-size: 1rem;
 }
+
 img {
   width: 196px; 
   height:217px
 }
 
-@media(max-width: 330px){
+@media(max-width: 411px){
   .tga_form_logo img {
     width: 136px; 
     height:157px;

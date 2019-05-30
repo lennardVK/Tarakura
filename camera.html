@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <title>camera</title>
   <link rel="stylesheet" href="assets/stylesheets/variables.css">
   <link rel="stylesheet" href="assets/stylesheets/form.css">
@@ -27,14 +28,13 @@
         <a-asset-item id="threes_animated_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/threes_animated.obj"></a-asset-item>
       </a-assets>
 
-      <a-camera>
-      </a-camera>
+     
 
       <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/wisdom_75.patt'>  
-        <a-entity obj-model="obj: #threes_animated_obj; mtl: #threes_animated_mtl" position="0 1 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
+        <a-entity obj-model="obj: #threes_animated_obj; mtl: #threes_animated_mtl" position="0 0 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
       </a-marker>  
       <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/test.patt'>  
-        <a-entity obj-model="obj: #threes_animated_obj; mtl: #threes_animated_mtl" position="0 2 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+        <a-entity obj-model="obj: #obj; mtl: #mtl" position="0 1 0" scale="0.0009 0.0009 0.0009" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
       </a-marker>  
     </a-scene>
     
