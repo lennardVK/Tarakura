@@ -31,7 +31,6 @@ body{
   margin-top: 1rem; 
   font-size: 1rem;
   border-radius: 100px;
-
 }
 
 .camera_controlls_container{
@@ -50,8 +49,8 @@ body{
   font-size: 1rem;
   text-transform: uppercase;
 }
+
 .wrapper{
-  
   position: absolute;
   bottom: 10rem;
   display: flex;
@@ -61,18 +60,15 @@ body{
   height:0%;
   z-index: 10000000;
   transition: height 0.5s ease-out;
-
 }
+
 .camera_preview{
-  
   overflow: hidden;
   position: absolute;
   border-radius: 5px;
   margin: 0px auto;
   width: 60%;
-  
   padding-top: 1rem;
-  
   display: flex;
   flex-direction: column;
   background: var(--main_bg_color);
@@ -80,9 +76,8 @@ body{
   font-size: 1rem;
   align-items: center;
   justify-content: space-around;
-  
-
 }
+
 .camera_preview_controlls{
   display: flex;
   justify-content: space-around;
@@ -113,17 +108,14 @@ body{
   color: #ffffff;
 }
 
-
 .camera_preview_image{
   max-width: 90%;
-  max-height: 90%;
-}
-
-.camera_preview_image img {
   
 }
 
-@media(max-width: 600px){
+
+@media(max-width: 700px){
+
   .camera_preview{
     width: 100%;
   }
