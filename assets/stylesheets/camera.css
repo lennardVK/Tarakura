@@ -8,6 +8,7 @@ body{
   justify-content: space-around;
   padding-bottom: 2rem;
   bottom: 0rem;
+  right: 0;
   z-index: 1000000;
   display: flex;
   width: 100%;
@@ -47,6 +48,7 @@ body{
   margin: 0px auto;
   margin-top: 1rem; 
   font-size: 1rem;
+  text-transform: uppercase;
 }
 .wrapper{
   
@@ -88,7 +90,8 @@ body{
   padding-bottom: 1rem;
 }
 
-.camera_preview_controlls_close, .camera_preview_controlls_link_btn{
+.camera_preview_controlls_link_btn{
+  text-transform: uppercase;
   width: 20rem;
   height: 3rem;
   cursor: pointer;
@@ -99,7 +102,33 @@ body{
   font-size: 1rem;
 }
 
+.camera_preview_controlls_close{
+  width: 10rem;
+  text-transform: uppercase;
+  height: 2rem;
+  font-size: 0.6rem;
+  margin: 0px auto;
+  margin-top: 2rem; 
+  background-color: var(--main_accent_color);
+  color: #ffffff;
+}
+
+
 .camera_preview_image{
   max-width: 90%;
   max-height: 90%;
+}
+
+.camera_preview_image img {
+  width: 196px; 
+}
+
+@media(max-width: 600px){
+  .camera_preview{
+    width: 100%;
+  }
+
+  .wrapper{
+    right: 0;
+  }
 }

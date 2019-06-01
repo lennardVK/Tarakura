@@ -9,14 +9,13 @@ currentId.toString()
 //let currentId = Math.floor(Math.random() * Math.floor(99999999999))
 console.log('currentId',currentId)
 
-
   
 function getSnapshot(){
   
   //let canvas = document.getElementById('mycanvas')
   
   //console.log(document.querySelector('a-scene').components.screenshot.capture('perspective'))
-  
+  console.log(document.getElementsByTagName('video')[0])
   let video = document.querySelector('a-scene').components.screenshot.getCanvas('newCanvas')
   let dataURL = video.toDataURL('image/jpg')
   currentImgUrl = dataURL
@@ -86,6 +85,10 @@ function disableBtn(btnElement){
 }
 */
 window.onload = function(){
+
+let ui = document.getElementsByClassName('a-enter-vr-button');
+ui[0].style.display = 'none'
+
   document.getElementById('arjsDebugUIContainer').style.display = 'none'
 }
 
