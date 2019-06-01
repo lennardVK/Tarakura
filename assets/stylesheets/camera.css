@@ -120,7 +120,7 @@ body{
 }
 
 .camera_preview_image img {
-  width: 196px; 
+  
 }
 
 @media(max-width: 600px){
