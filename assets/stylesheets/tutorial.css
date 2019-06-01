@@ -48,7 +48,7 @@ img{
   height:197px
 }
 
-@media (max-width: 411px){
+@media (max-width: 611px){
   #headline {
     font-size: 1rem;
   }
