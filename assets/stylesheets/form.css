@@ -97,9 +97,11 @@ button:hover {
 }
 
 .tga_form_error{
+  margin: 1rem auto;
+  padding: 1rem;
+  background: var(--main_bg_color);
   display: none;
   font-size: 1rem;
-  color: red;
 }
 
 .tga_form_wrapper{
