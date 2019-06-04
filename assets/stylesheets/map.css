@@ -12,11 +12,16 @@ html, body {
 .tga_content {
   height: 100vh;
   width: 100%;
-  border: solid 1px #000000
 }
 
 .tga_content_map {
   height: 100%;
   margin: 0px, auto
 }
+
+.gm-style .gm-style-iw {
+  
+  left: 0 !important;
+}    
+
 

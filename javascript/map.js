@@ -92,14 +92,20 @@ function initMap() {
     geocodeAddress(geocoder, map)
   }
     
-  
   function initMainPosition(position){
-    
+    var icon = {
+      url:  'assets/images/initial_position.svg',
+      scaledSize: new google.maps.Size(50, 50), // scaled size
+    }
     var marker = new google.maps.Marker({
       map: map,
       position: position,
-      icon: 'assets/images/initial_position.svg'
+      icon: icon,
+      url: 'https://www.hs-osnabrueck.de/en/'
     })
+    google.maps.event.addListener(marker, 'click', function() {
+      window.location.href = this.url
+    });
   }
   
   var storage = firebase.storage()
@@ -130,19 +136,38 @@ function initMap() {
         console.log(arrayOfIds[index])
         var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f')
         
+        /*
+        function getBase64Image(img) {
+          console.log( img)
+          var canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
+      
+          var ctx = canvas.getContext("2d")
+          ctx.drawImage(img, 0, 0)
+          console.log( canvas)
+          var dataURL = canvas.toDataURL("image/png")
+      
+          return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+        }*/
+
 
         geocoder.geocode({address}, function(results, status) {
           
           if (status === 'OK'  ) { 
-            
+           
             var icon = {
               url:  'assets/images/marker_animated.svg',
               scaledSize: new google.maps.Size(50, 50), // scaled size
             }
             let y = 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f'
             let x = "" + y + ""
-            let currentWindow = "<div style='float:left; background-color:#FE5F55;'><img style='width: 300px; height: 200px; ' src=" + x + "></div>"
+            let currentWindow = "<div style='display:flex; flex-direction:column;'><img style='width: 300px; ' src=" + x + "><a href=" + x + " download='My-Campus'>Download</a></div>"
             console.log(currentWindow)
+
+           // currentImg = document.getElementsByTagName('img')[0]
+            //imgData = getBase64Image(currentImg);
+           // localStorage.setItem("imgData", imgData);
 
             let infowindow =  new google.maps.InfoWindow({  
               content: currentWindow,
