@@ -12,8 +12,6 @@ function getCookie(cookie){
   }
 }
 
-
-
 function showError(){
   let error = document.getElementById('error')
   error.style.display = "flex"
@@ -56,12 +54,19 @@ function hideConfirmation(){
   confirm.style.display = "none"
 }
 
-function confirmation(){
+function checkInput(){
+  if (document.getElementById('address').value != ""){
+    confirmation("camera.html")
+  }else {
+    showError()
+  }
+}
+
+function confirmation(url){
   confirmed = "true"
   currentAddress =  document.getElementById('address').value
-  console.log('currentId')
+  window.location = url
   createUser()
-  hideConfirmation()
   getCookie(document.cookie)
 }
 

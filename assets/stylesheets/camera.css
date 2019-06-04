@@ -8,6 +8,7 @@ body{
   justify-content: space-around;
   padding-bottom: 2rem;
   bottom: 0rem;
+  right: 0;
   z-index: 1000000;
   display: flex;
   width: 100%;
@@ -30,7 +31,6 @@ body{
   margin-top: 1rem; 
   font-size: 1rem;
   border-radius: 100px;
-
 }
 
 .camera_controlls_container{
@@ -47,9 +47,10 @@ body{
   margin: 0px auto;
   margin-top: 1rem; 
   font-size: 1rem;
+  text-transform: uppercase;
 }
+
 .wrapper{
-  
   position: absolute;
   bottom: 10rem;
   display: flex;
@@ -59,18 +60,15 @@ body{
   height:0%;
   z-index: 10000000;
   transition: height 0.5s ease-out;
-
 }
+
 .camera_preview{
-  
   overflow: hidden;
   position: absolute;
   border-radius: 5px;
   margin: 0px auto;
   width: 60%;
-  
   padding-top: 1rem;
-  
   display: flex;
   flex-direction: column;
   background: var(--main_bg_color);
@@ -78,9 +76,8 @@ body{
   font-size: 1rem;
   align-items: center;
   justify-content: space-around;
-  
-
 }
+
 .camera_preview_controlls{
   display: flex;
   justify-content: space-around;
@@ -88,7 +85,8 @@ body{
   padding-bottom: 1rem;
 }
 
-.camera_preview_controlls_close, .camera_preview_controlls_link_btn{
+.camera_preview_controlls_link_btn{
+  text-transform: uppercase;
   width: 20rem;
   height: 3rem;
   cursor: pointer;
@@ -99,7 +97,30 @@ body{
   font-size: 1rem;
 }
 
+.camera_preview_controlls_close{
+  width: 10rem;
+  text-transform: uppercase;
+  height: 2rem;
+  font-size: 0.6rem;
+  margin: 0px auto;
+  margin-top: 2rem; 
+  background-color: var(--main_accent_color);
+  color: #ffffff;
+}
+
 .camera_preview_image{
   max-width: 90%;
-  max-height: 90%;
+  
+}
+
+
+@media(max-width: 700px){
+
+  .camera_preview{
+    width: 100%;
+  }
+
+  .wrapper{
+    right: 0;
+  }
 }
