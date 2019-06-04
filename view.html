@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/stylesheets/variables.css">
   <link rel="stylesheet" href="assets/stylesheets/form.css">
   <link rel="stylesheet" href="assets/stylesheets/camera.css">
+  <link rel="stylesheet" href="assets/stylesheets/map.css">
   <link rel="icon" href="assets/images/logo_tab.png">
   
 <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
@@ -67,33 +68,12 @@
             <a-camera></a-camera>
           </a-scene>
   
-      
+          <a class="tga_content_btn" href="map.html">
+              <button>See other campuses</button>
+          </a>
     
 
-  <div class="wrapper" id="preview">
-    <div class="camera_preview" id="preview">
-      <img class="camera_preview_image" id="image_element" src="" alt="">
-      <div class="camera_preview_controlls"> 
-        <a class="camera_preview_controlls_link" onclick="submit ('map.html')" >
-          <button class="camera_preview_controlls_link_btn" >Share</button>
-        </a>
-        <button class="camera_preview_controlls_close" onclick="hidePreview()">Close</button>
-      </div>
-    </div>
-  </div>
   
-
-  <div class="camera_controlls">
-      <!--
-      <a class="camera_controlls_link" href='index.html'>
-        <button class="camera_controlls_link_back" >Back</button>
-      </a>
-      -->
-      <div class="camera_controlls_container">
-        <button class="camera_controlls_container_snapshot" id="snapshot"  onclick="getSnapshot()">Take a Snapshot</button>
-      </div>
-  </div>
-
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
@@ -103,7 +83,7 @@
   <script src="javascript/map.js"></script>
   
   <script src="javascript/form.js"></script>
-  <script src="javascript/camera.js"></script>
+
   
     
 

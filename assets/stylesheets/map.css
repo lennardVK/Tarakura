@@ -20,8 +20,27 @@ html, body {
 }
 
 .gm-style .gm-style-iw {
-  
   left: 0 !important;
-}    
+} 
+
+.tga_content_btn{
+  position: absolute;
+  z-index: 100000000;
+  left: 1rem;
+  bottom: 1rem;
+}
+
+.tga_content_btn button {
+  width: 100%;
+  height: 3rem;
+  cursor: pointer;
+  background-color: var(--main_accent_color);
+  color: #ffffff;
+  border-radius: 200px;
+  text-transform: uppercase;
+  margin: 0px auto;
+  margin-top: 1rem; 
+  font-size: 1rem;
+}
 
 
