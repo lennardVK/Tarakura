@@ -21,7 +21,7 @@
     <canvas id="mycanvas" style="position:absolute; display:none">
     </canvas>
     
-      <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true" background="color: red">
+      <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true" >
         <a-assets>
           <a-asset-item id="Mensa_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Mensa.mtl"></a-asset-item>
           <a-asset-item id="Mensa_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Mensa.obj"></a-asset-item>
@@ -51,17 +51,19 @@
           <a-entity obj-model="obj: #park_obj; mtl: #park_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
         </a-marker>  
         <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-sport.patt'>  
-          <a-entity obj-model="obj: #sport_obj; mtl: #sport_mtl" position="0 0 -2" scale="0.01 0.01 0.01" rotation="0 0 0" light="type: directional; castShadow: true; intensity: 0.4; shadowCameraVisible: true;" position="-5 3 1.5"></a-entity> 
+          <a-entity obj-model="obj: #sport_obj; mtl: #sport_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" light="type: directional; castShadow: true; intensity: 0.4; " ></a-entity> 
         </a-marker>  
         <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-library.patt'>  
           <a-entity obj-model="obj: #library_obj; mtl: #library_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
         </a-marker>  
         <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-living.patt'>  
-          <a-entity obj-model="obj: #living_space_obj; mtl: #living_space_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+          <a-entity obj-model="obj: #living_space_obj; mtl: #living_space_mtl" position="0 0 -2" scale="0.002 0.002 0.002" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
         </a-marker>  
         <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-knowledge.patt'>  
-          <a-entity obj-model="obj: #campus_obj; mtl: #campus_mtl" position="0 0 -2" scale="0.01 0.01 0.01" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+          <a-entity obj-model="obj: #campus_obj; mtl: #campus_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
         </a-marker>  
+        <a-light type="ambient" color="#445451"></a-light>
+        <a-light type="point" intensity="0.6" position="2 4 4"></a-light>
       </a-scene>
   
       <a class="tga_content_btn" href="map.html">
