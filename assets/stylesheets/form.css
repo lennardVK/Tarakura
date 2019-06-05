@@ -9,6 +9,9 @@ button:focus{
   outline: none;
 }
 
+body{
+  height: 100vh;
+}
 
 input:focus{
   outline: none;
@@ -167,8 +170,24 @@ button:hover {
   }
 
   #back_btn{
-    left: 0;
+    display: none;
+  }
+
+  #back_btn_alt{
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    color: #FFFFFF;
+    font-size: 1rem;
+    background-color: var(--main_bg_color);
+    z-index: 100000;
+    padding: 1rem;
+    border-radius: 100px;
+    cursor: pointer;
+    text-transform: uppercase;
+  
+    display: flex;
     margin: 0px auto;
-    z-index: 1000000;
+    
   }
 }
