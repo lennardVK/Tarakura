@@ -1,18 +1,18 @@
-
 button {
   border-radius: 5px;
   box-shadow: 7px 7px 11px -6px rgba(0,0,0,0.31);
   transition: box-shadow 0.2s ease-in;
   border: none;   
 }
+
 button:focus{
   outline: none;
 }
 
 body{
-  
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
-  
 }
 
 input:focus{
@@ -49,7 +49,6 @@ button:hover {
   margin: 0px auto;
   text-transform: uppercase;
   font-size: 1rem;
-  
 }
 
 .tga_form{
@@ -57,9 +56,7 @@ button:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  
   z-index: 100000;
-  
   color: #ffffff;
   font-family: Montserrat, Roboto, Arial;
 }
