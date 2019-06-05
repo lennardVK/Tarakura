@@ -29,7 +29,6 @@ button:hover {
   height: 100%;
   position: absolute;
   z-index: 10000;
-  background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
 }
 
 .tga_form_logo{
