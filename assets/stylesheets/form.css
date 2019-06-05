@@ -12,7 +12,7 @@ button:focus{
 body{
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
+  background: #F0B67F;
 }
 
 input:focus{
