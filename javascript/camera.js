@@ -7,7 +7,7 @@ let currentId = localStorage.getItem('session')
 currentId = JSON.parse(currentId)[0].userId;
 currentId.toString()
 
-let arrayOfBgs = ["https://www.colourbox.de/preview/5044200-feld-gras-textur.jpg",
+let arrayOfBgs = ["https://images.unsplash.com/photo-1523295475921-ca5ea3d129a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2727&q=80",
 "https://images.unsplash.com/photo-1523295475921-ca5ea3d129a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2727&q=80",
 "https://images.unsplash.com/photo-1523295616404-2b6c098f26dd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2300&q=80"
 ]
@@ -96,13 +96,4 @@ function disableBtn(btnElement){
   messageElement.style.width = '100%'
 }
 */
-window.onload = function(){
-
-let ui = document.getElementsByClassName('a-enter-vr-button');
-ui[0].style.display = 'none'
-
-  document.getElementById('arjsDebugUIContainer').style.display = 'none'
-}
-
-
       
