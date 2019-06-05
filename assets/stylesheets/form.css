@@ -10,7 +10,7 @@ button:focus{
 }
 
 body{
-  height: 100vh;
+  height: 100%;
 }
 
 input:focus{
@@ -25,6 +25,7 @@ button:hover {
 .tga{
   width: 100%;
   height: 100%;
+  position: absolute;
   z-index: 10000;
   background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
 }
@@ -154,6 +155,10 @@ button:hover {
   height:217px
 }
 
+#back_btn_alt{
+  display: none;
+}
+
 @media(max-width: 611px){
   .tga_form_logo img {
     width: 136px; 
@@ -180,14 +185,13 @@ button:hover {
     color: #FFFFFF;
     font-size: 1rem;
     background-color: var(--main_bg_color);
-    z-index: 100000;
+    z-index: 1000000000;
     padding: 1rem;
     border-radius: 100px;
     cursor: pointer;
     text-transform: uppercase;
-  
     display: flex;
     margin: 0px auto;
-    
   }
 }
+
