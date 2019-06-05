@@ -159,6 +159,8 @@ button:hover {
 
   #back_btn{
     left: 0;
+    bottom: none;
+    top: 1rem;
     margin: 0px auto;
   }
 }

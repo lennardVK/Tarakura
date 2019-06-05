@@ -17,58 +17,59 @@
 
 <body >
 
-    <canvas id="mycanvas" style="position:absolute; display:none">
-    </canvas>
+   
     
-        <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true">
-          <a-assets>
-            <a-asset-item id="Mensa_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Mensa.mtl"></a-asset-item>
-            <a-asset-item id="Mensa_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Mensa.obj"></a-asset-item>
+      <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true">
+        <a-assets>
+          <img id="bg" src="https://images.unsplash.com/photo-1556304085-733a497a73c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80">
 
-            <a-asset-item id="threes_animated_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/threes_animated.mtl"></a-asset-item>
-            <a-asset-item id="threes_animated_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/threes_animated.obj"></a-asset-item>
+          <a-asset-item id="Mensa_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Mensa.mtl"></a-asset-item>
+          <a-asset-item id="Mensa_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Mensa.obj"></a-asset-item>
 
-            <a-asset-item id="sport_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/sport.mtl"></a-asset-item>
-            <a-asset-item id="sport_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/sport.obj"></a-asset-item>
+          <a-asset-item id="threes_animated_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/threes_animated.mtl"></a-asset-item>
+          <a-asset-item id="threes_animated_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/threes_animated.obj"></a-asset-item>
 
-            <a-asset-item id="library_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Library.mtl"></a-asset-item>
-            <a-asset-item id="library_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Library.obj"></a-asset-item>
+          <a-asset-item id="sport_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/sport.mtl"></a-asset-item>
+          <a-asset-item id="sport_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/sport.obj"></a-asset-item>
 
-            <a-asset-item id="living_space_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/living.mtl"></a-asset-item>
-            <a-asset-item id="living_space_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/living.obj"></a-asset-item>
+          <a-asset-item id="library_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Library.mtl"></a-asset-item>
+          <a-asset-item id="library_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Library.obj"></a-asset-item>
 
-            <a-asset-item id="park_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Park.mtl"></a-asset-item>
-            <a-asset-item id="park_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Park.obj"></a-asset-item>
+          <a-asset-item id="living_space_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/living.mtl"></a-asset-item>
+          <a-asset-item id="living_space_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/living.obj"></a-asset-item>
 
-            <a-asset-item id="campus_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.mtl"></a-asset-item>
-            <a-asset-item id="campus_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.obj"></a-asset-item>
-          </a-assets>
-    
-            
-    
-            <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-coffe.patt'>  
-              <a-entity obj-model="obj: #Mensa_obj; mtl: #Mensa_mtl" position="0 0 0" scale="0.004 0.004 0.004" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
-            </a-marker>  
-            <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-green.patt'>  
-              <a-entity obj-model="obj: #park_obj; mtl: #park_mtl" position="0 0 -2" scale="0.01 0.01 0.01" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
-            </a-marker>  
-            <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-sport.patt'>  
-              <a-entity obj-model="obj: #sport_obj; mtl: #sport_mtl" position="0 0 -2" scale="0.01 0.01 0.01" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
-            </a-marker>  
-            <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-library.patt'>  
-              <a-entity obj-model="obj: #library_obj; mtl: #library_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
-            </a-marker>  
-            <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-living.patt'>  
-              <a-entity obj-model="obj: #living_space_obj; mtl: #living_space_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
-            </a-marker>  
-            <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-knowledge.patt'>  
-              <a-entity obj-model="obj: #campus_obj; mtl: #campus_mtl" position="0 0 -2" scale="0.01 0.01 0.01" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
-            </a-marker>  
-            <a-camera></a-camera>
-          </a-scene>
-  
-      
-    
+          <a-asset-item id="park_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Park.mtl"></a-asset-item>
+          <a-asset-item id="park_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/Park.obj"></a-asset-item>
+
+          <a-asset-item id="campus_mtl" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.mtl"></a-asset-item>
+          <a-asset-item id="campus_obj" src="https://raw.githubusercontent.com/lennardVK/theGiveAway/master/assets/models/campus.obj"></a-asset-item>
+        </a-assets>
+
+          
+          <a-sky src="#bg"></a-sky>
+          <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-coffe.patt'>  
+            <a-entity obj-model="obj: #Mensa_obj; mtl: #Mensa_mtl" position="0 0 0" scale="0.004 0.004 0.004" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity>
+          </a-marker>  
+          <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-green.patt'>  
+            <a-entity obj-model="obj: #park_obj; mtl: #park_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+          </a-marker>  
+          <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-sport.patt'>  
+            <a-entity obj-model="obj: #sport_obj; mtl: #sport_mtl" scale="0.01 0.01 0.01"  light="type: ambient; intensity: 0.5;"></a-entity> 
+          </a-marker>  
+          <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-library.patt'>  
+            <a-entity obj-model="obj: #library_obj; mtl: #library_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+          </a-marker>  
+          <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-living.patt'>  
+            <a-entity obj-model="obj: #living_space_obj; mtl: #living_space_mtl" position="0 0 -2" scale="0.003 0.003 0.003" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+          </a-marker>  
+          <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-knowledge.patt'>  
+            <a-entity obj-model="obj: #campus_obj; mtl: #campus_mtl" position="0 0 -2" scale="0.01 0.01 0.01" rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-entity> 
+          </a-marker> 
+          <a-entity environment="preset: forest; dressingAmount: 500"></a-entity> 
+
+          <a-light type="ambient" color="#445451"></a-light>
+          <a-light type="point" intensity="0.3" position="2 4 4"></a-light>
+        </a-scene>
 
   <div class="wrapper" id="preview">
     <div class="camera_preview" id="preview">
@@ -82,7 +83,6 @@
     </div>
   </div>
   
-
   <div class="camera_controlls">
       <!--
       <a class="camera_controlls_link" href='index.html'>
@@ -93,6 +93,7 @@
         <button class="camera_controlls_container_snapshot" id="snapshot"  onclick="getSnapshot()">Take a Snapshot</button>
       </div>
   </div>
+  <canvas style="width: 100vw; height: 100vh;" id="mycanvas"></canvas>
 
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
