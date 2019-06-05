@@ -10,7 +10,9 @@ button:focus{
 }
 
 body{
-  height: 100%;
+  
+  background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);
+  
 }
 
 input:focus{
