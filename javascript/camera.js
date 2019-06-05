@@ -49,10 +49,11 @@ function getSnapshot(){
 }
 
 function delay (URL) {
-  setTimeout( function() { window.location = URL }, 2000 );
+  submit()
+  setTimeout( function() { window.location = URL }, 4000 );
 }
 
-function submit(URL){
+function submit(){
   
   let byteString = atob(currentImgUrl.split(',')[1])
   
@@ -73,10 +74,8 @@ function submit(URL){
   storageRef.put(blob).then(function(snapshot) {
     console.log('Uploaded a blob or file!')
   })
-  //disableBtn(document.getElementById('snapshot'))
   
   hidePreview()
-  delay (URL)
   console.log('upload')
 }
 
