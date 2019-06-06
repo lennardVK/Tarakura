@@ -34,9 +34,6 @@ function getSnapshot(){
   context.drawImage(video, 0, 0, width, height);
   currentImgUrl = dataURL
   console.log(currentImgUrl)
-  // Turn the canvas image into a dataURL that can be used as a src for our photo.
-  
-  
   /*
   let element = document.getElementById('screen')
   
@@ -46,7 +43,6 @@ function getSnapshot(){
   imageElement.src = dataURL  
   currentImgUrl = dataURL */
   showPreview()
-  
 }
 
 
@@ -80,7 +76,7 @@ function submit(URL){
 }
 
 function showPreview(){
-  preview.style.height = "60%"
+  preview.style.height = "70%"
   imageElement.src = currentImgUrl
 }
 

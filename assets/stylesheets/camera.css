@@ -13,7 +13,7 @@ body{
   display: flex;
   width: 100%;
   flex-direction: row;
-  background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%)
+  background-color: var(--secondary_bg_color);
 }
 
 .camera_remove_link{
@@ -31,6 +31,7 @@ body{
   margin-top: 1rem; 
   font-size: 1rem;
   border-radius: 100px;
+  padding-left: 0.5rem;
 }
 
 .camera_controlls_container{
@@ -71,7 +72,7 @@ body{
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  background: var(--main_bg_color);
+  background: var(--secondary_bg_color);
   color: #ffffff;
   font-size: 1rem;
   align-items: center;
@@ -80,15 +81,19 @@ body{
 
 .camera_preview_controlls{
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
   padding-bottom: 1rem;
+}
+
+.camera_preview_controlls_link{
+  padding-right: 0.5rem;
 }
 
 .camera_preview_controlls_link_btn{
   text-transform: uppercase;
-  width: 20rem;
-  height: 3rem;
+  width: 15rem;
+  height: 2rem;
   cursor: pointer;
   background-color: var(--main_accent_color);
   color: #ffffff;
@@ -101,11 +106,11 @@ body{
   width: 10rem;
   text-transform: uppercase;
   height: 2rem;
-  font-size: 0.6rem;
+  font-size: 1rem;
   margin: 0px auto;
-  margin-top: 2rem; 
-  background-color: var(--main_accent_color);
+  background-color: var(--main_bg_color);
   color: #ffffff;
+  margin-top: 1rem; 
 }
 
 .camera_preview_image{
