@@ -1,11 +1,16 @@
 
 
 let timer
+let loaderElement = document.getElementById("loading_wrap")
 
 function setLoader() {
-  timer = setTimeout(showPage, 6000)
+  if(loaderElement.style.display == "none"){
+    loaderElement.style.display = "flex"
+  }
+  console.log('load')
+  timer = setTimeout(showPage, 14000)
 }
 
 function showPage() {
-  document.getElementById("loading_wrap").style.display = "none"
+  loaderElement.style.display = "none"
 }

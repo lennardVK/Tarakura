@@ -2,6 +2,7 @@ let preview = document.getElementById('preview')
 let imageElement = document.getElementById('image_element')
 let currentImgUrl = ""
 let frameBg = document.getElementById('bg')
+let uploaded = false
 
 let currentId = localStorage.getItem('session')
 currentId = JSON.parse(currentId)[0].userId;
@@ -48,13 +49,9 @@ function getSnapshot(){
   
 }
 
-function delay (URL) {
-  submit()
-  setTimeout( function() { window.location = URL }, 4000 );
-}
 
-function submit(){
-  
+function submit(URL){
+  setLoader()
   let byteString = atob(currentImgUrl.split(',')[1])
   
   let mimeString = currentImgUrl.split(',')[0].split(':')[1].split(';')[0]
@@ -70,13 +67,16 @@ function submit(){
   let blob = new Blob([ab], {type: mimeString})
   console.log('currentId: ',currentId)
   let storageRef = firebase.storage().ref(""+currentId+"")
-  
+  console.log(blob)
   storageRef.put(blob).then(function(snapshot) {
     console.log('Uploaded a blob or file!')
+    uploaded = true
+    if(uploaded){
+      window.location = URL 
+    }
   })
   
   hidePreview()
-  console.log('upload')
 }
 
 function showPreview(){
@@ -87,12 +87,4 @@ function showPreview(){
 function hidePreview(){
   preview.style.height = "0%"
 }
-/*
-function disableBtn(btnElement){
-  btnElement.onclick = null
-  btnElement.style.backgroundColor = 'grey'
-  let messageElement = document.getElementById('message') 
-  messageElement.style.width = '100%'
-}
-*/
       
