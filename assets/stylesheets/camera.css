@@ -13,7 +13,7 @@ body{
   display: flex;
   width: 100%;
   flex-direction: row;
-  background-color: var(--secondary_bg_color);
+  background-color: var(--main_bg_color);
 }
 
 .camera_remove_link{
@@ -70,10 +70,9 @@ body{
   border-radius: 5px;
   margin: 0px auto;
   width: 60%;
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  background: var(--secondary_bg_color);
+  background: var(--main_bg_color);
   color: #ffffff;
   font-size: 1rem;
   align-items: center;
@@ -86,7 +85,7 @@ body{
   flex-direction: row;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
-  margin-top: -6rem;
+  margin-top: -10rem;
 
 }
 
@@ -97,7 +96,7 @@ body{
 .camera_preview_controlls_link_btn{
   text-transform: uppercase;
   width: 12rem;
-  height: 2rem;
+  height: 3rem;
   cursor: pointer;
   background-color: var(--main_accent_color);
   color: #ffffff;
@@ -109,10 +108,10 @@ body{
 .camera_preview_controlls_close{
   width: 10rem;
   text-transform: uppercase;
-  height: 2rem;
+  height: 3rem;
   font-size: 1rem;
   margin: 0px auto;
-  background-color: var(--main_bg_color);
+  background-color: var(--secondary_bg_color);
   color: #ffffff;
   margin-top: 1rem; 
 }
@@ -132,5 +131,10 @@ body{
 
   .wrapper{
     right: 0;
+  }
+
+  .camera_preview_controlls{
+    margin-top: 0rem;
+    
   }
 }
