@@ -15,7 +15,7 @@
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 
-<body onload="setLoader()">
+<body onload="setLoader()" style="width: unset;">
 
     <div id='loading_wrap' style='z-index:1000000000; background-color: #D6D1B1; display:flex; flex-direction:column; justify-content: center; position:fixed; height:100%; width:100%; overflow:hidden; top:0; left:0;'>
         <img style="width: 6rem; margin: 0px auto;" class="tga_form_logo_image" src="assets/images/logo_animated.svg" alt="">
@@ -23,7 +23,7 @@
     </div>
 
     
-      <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true">
+      <a-scene embedded arjs="debugUIEnabled: false; trackingMethod:best; patternRatio: 0.80; " renderer="physicallyCorrectLights: true" style="height: 100vh; width: 100vw; position:unset;">
         <a-assets>
           <img id="bg" src="https://images.unsplash.com/photo-1556304085-733a497a73c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80">
 
@@ -47,7 +47,7 @@
         </a-assets>
 
           
-          
+        <a-sky src="#bg"></a-sky>
           <a-marker type='pattern' url='https://raw.githubusercontent.com/lennardVK/theGiveAway/master/marker/pattern-coffe.patt'>  
             <a-entity obj-model="obj: #Mensa_obj; mtl: #Mensa_mtl" position="0 3 0"  scale="0.001 0.001 0.001"  ></a-entity>
           </a-marker>  
@@ -89,11 +89,13 @@
       </a>
       -->
       <div class="camera_controlls_container">
+        <a id="download">Download</a>
         <button class="camera_controlls_container_snapshot" id="snapshot"  onclick="getSnapshot()">Take a Snapshot</button>
       </div>
   </div>
+  <!--
   <canvas style="width: 100vw; height: 100vh; display: none; position: absolute;" id="mycanvas"></canvas>
-
+  -->
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
@@ -101,7 +103,7 @@
 
   <script src="javascript/init-firebase.js"></script>
   <script src="javascript/map.js"></script>
-  
+  <script src="https://unpkg.com/merge-images"></script>
   <script src="javascript/form.js"></script>
   <script src="javascript/loading.js"></script>
   <script src="javascript/camera.js"></script>

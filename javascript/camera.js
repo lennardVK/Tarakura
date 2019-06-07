@@ -18,23 +18,91 @@ index = Math.floor(Math.random() * Math.floor(arrayOfBgs.length))
 
 let currentImg = arrayOfBgs[index]
 frameBg.src = currentImg 
+/*
+function scale(canvas){
+  canvas.width = canvas.width / 2
+  
+  canvas.height = canvas.height / 2
+  
+  return canvas
+}*/
 
+function resizeCanvas(origCanvas, width, height) {
+	let resizedCanvas = document.createElement("canvas");
+	let resizedContext = resizedCanvas.getContext("2d");
 
+	resizedCanvas.height = width;
+	resizedCanvas.width = height;
+
+  resizedContext.drawImage(origCanvas, 0, 0, width, height);
+  console.log('resizedCanvas',resizedCanvas )
+	return resizedCanvas.toDataURL();
+}
+
+function captureVideoFrame(video, format, width, height) {
+  if (typeof video === 'string') {
+    video = document.querySelector(video);
+  }
+
+  format = format || 'jpeg';
+
+  if (!video || (format !== 'png' && format !== 'jpeg')) {
+    return false;
+  }
+
+  var canvas = document.createElement("CANVAS");
+
+  canvas.width = width || video.videoWidth;
+  canvas.height = height || video.videoHeight;
+  canvas.getContext('2d').drawImage(video, 0, 0);
+  var dataUri = canvas.toDataURL('image/' + format);
+  var data = dataUri.split(',')[1];
+  var mimeType = dataUri.split(';')[0].slice(5)
+
+  var bytes = window.atob(data);
+  var buf = new ArrayBuffer(bytes.length);
+  var arr = new Uint8Array(buf);
+
+  for (var i = 0; i < bytes.length; i++) {
+      arr[i] = bytes.charCodeAt(i);
+  }
+
+  var blob = new Blob([ arr ], { type: mimeType });
+  return { blob: blob, dataUri: dataUri, format: format, width: canvas.width, height: canvas.height };
+};
+
+	
 function getSnapshot(){
+
+  let video = document.querySelector('a-scene').components.screenshot.getCanvas('perspective')
+  let frame = captureVideoFrame("video", "png");
+  video = resizeCanvas(video, frame.width, frame.height)
   
-  let canvas = document.getElementById('mycanvas')
+
+  //let dataURL = video.toDataURL('image/jpg')
+  frame = frame.dataUri
+  mergeImages([frame, video]).then(b64 => {
+    console.log('new',b64)
+    let link = document.getElementById("download");
+		link.setAttribute("download", "AR.png");
+    link.setAttribute("href", b64);
+    imageElement.setAttribute("src", b64);
+    currentImgUrl = b64
+  });
   
-  let video = document.querySelector('a-scene').components.screenshot.getCanvas('newCanvas')
-  let dataURL = video.toDataURL('image/jpg')
-  context = canvas.getContext('2d');
   
-  let width = canvas.width
-  let height = canvas.height
+
+  
+  /*
+
+
+  context = video.getContext('2d');
+  
+  let width = 500
+  let height = 200
+
 
   context.drawImage(video, 0, 0, width, height);
-  currentImgUrl = dataURL
-  console.log(currentImgUrl)
-  /*
   let element = document.getElementById('screen')
   
   video.getContext('2d').canvas.drawImage(100, 100, 500)
@@ -44,6 +112,7 @@ function getSnapshot(){
   currentImgUrl = dataURL */
   showPreview()
 }
+
 
 
 function submit(URL){
@@ -77,7 +146,7 @@ function submit(URL){
 
 function showPreview(){
   preview.style.height = "70%"
-  imageElement.src = currentImgUrl
+  //imageElement.src = currentImgUrl
 }
 
 function hidePreview(){

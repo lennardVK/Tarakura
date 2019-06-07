@@ -57,6 +57,7 @@ body{
   display: flex;
   justify-content: space-around;
   width: 100%;
+  align-items: center;
   overflow: hidden;
   height:0%;
   z-index: 10000000;
@@ -92,7 +93,7 @@ body{
 
 .camera_preview_controlls_link_btn{
   text-transform: uppercase;
-  width: 15rem;
+  width: 12rem;
   height: 2rem;
   cursor: pointer;
   background-color: var(--main_accent_color);
