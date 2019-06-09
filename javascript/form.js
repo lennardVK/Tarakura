@@ -4,7 +4,6 @@ let currentAddress
 let background = document.getElementById('background')
 
 function getCookie(cookie){
-  console.log(cookie)
   if(cookie){
     window.location.href = "map.html"
   } else{
@@ -74,26 +73,3 @@ function clearForm(){
   document.getElementById('address').value = ""
   document.getElementById('upload').value = ""
 }
-/*
-function geocodeAddress(geocoder, resultsMap) {
-  console.log('ok')
-  var address = document.getElementById('address').value
-  geocoder.geocode({'address': address}, function(results, status) {
-   
-    if (status === 'OK'  ) {
-      console.log('ok')
-      resultsMap.setCenter(results[0].geometry.location)
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-        
-      })
-      return true  
-      hideForm()
-    } else {
-      console.log('not ok')
-      return false  
-      showError()
-    }
-  })
-} */

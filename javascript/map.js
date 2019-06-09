@@ -95,7 +95,7 @@ function initMap() {
   function initMainPosition(position){
     var icon = {
       url:  'assets/images/initial_position.svg',
-      scaledSize: new google.maps.Size(50, 50), // scaled size
+      scaledSize: new google.maps.Size(50, 50), 
     }
     var marker = new google.maps.Marker({
       map: map,
@@ -105,7 +105,7 @@ function initMap() {
     })
     google.maps.event.addListener(marker, 'click', function() {
       window.location.href = this.url
-    });
+    })
   }
   
   var storage = firebase.storage()
@@ -136,43 +136,22 @@ function initMap() {
         console.log(arrayOfIds[index])
         var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f')
         
-        /*
-        function getBase64Image(img) {
-          console.log( img)
-          var canvas = document.createElement("canvas");
-          canvas.width = img.width;
-          canvas.height = img.height;
-      
-          var ctx = canvas.getContext("2d")
-          ctx.drawImage(img, 0, 0)
-          console.log( canvas)
-          var dataURL = canvas.toDataURL("image/png")
-      
-          return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-        }*/
-
 
         geocoder.geocode({address}, function(results, status) {
           
           if (status === 'OK'  ) { 
-           
             var icon = {
               url:  'assets/images/marker_animated.svg',
-              scaledSize: new google.maps.Size(50, 50), // scaled size
+              scaledSize: new google.maps.Size(50, 50), 
             }
             let y = 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f'
             let x = "" + y + ""
-            let currentWindow = "<div style='display:flex; flex-direction:column;'><img style='width: 300px; ' src=" + x + "><a onclick='downloadImg()'>Download</a></div>"
-            console.log(currentWindow)
-
-           // currentImg = document.getElementsByTagName('img')[0]
-            //imgData = getBase64Image(currentImg);
-           // localStorage.setItem("imgData", imgData);
-
+            let currentWindow = "<div style='display:flex flex-direction:column'><img style='width: 300px ' src=" + x + "><a onclick='downloadImg()'>Download</a></div>"
+          
             let infowindow =  new google.maps.InfoWindow({  
               content: currentWindow,
               position: results[0].geometry.location
-            });
+            })
 
             let marker = new google.maps.Marker({
               map: resultsMap,
@@ -189,14 +168,12 @@ function initMap() {
                 active = true
                 infowindow.open(map, this)
               } 
-            });
+            })
             
-         
             let markerPos = results[0].geometry.location
             const initalPosition = {lat: 52.282416, lng: 8.025453}
             let newPath = [markerPos, initalPosition]
             
-            console.log('newPath',newPath)
             let flightPath = new google.maps.Polyline({
               path: newPath,
               geodesic: true,
@@ -204,7 +181,6 @@ function initMap() {
               strokeOpacity: 1,
               strokeWeight: 2
             })
-            
             flightPath.setMap(map)
           }          
         }) 
@@ -214,17 +190,14 @@ function initMap() {
 
   function downloadImg(){
     storageRef.child('images/stars.jpg').getDownloadURL().then(function(url) {
-      // `url` is the download URL for 'images/stars.jpg'
-    
-      // This can be downloaded directly:
       var xhr = new XMLHttpRequest()
-      xhr.responseType = 'blob';
+      xhr.responseType = 'blob'
       xhr.onload = function(event) {
-        var blob = xhr.response;
+        var blob = xhr.response
       }
 
-      xhr.open('GET', url);
-      xhr.send();
+      xhr.open('GET', url)
+      xhr.send()
     
     }).catch(function(error) {
       console.log('download faild')

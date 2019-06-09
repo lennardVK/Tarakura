@@ -1,4 +1,3 @@
-
 document.cookie = "username=John Doe";
 
 var config = {
@@ -8,8 +7,6 @@ var config = {
   projectId: "thegiveaway",
   storageBucket: "thegiveaway.appspot.com",
   messagingSenderId: "57933412992"
-};
+}
 
 firebase.initializeApp(config)
-
-

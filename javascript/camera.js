@@ -78,8 +78,6 @@ function getSnapshot(){
   let frame = captureVideoFrame("video", "png");
   video = resizeCanvas(video, frame.width, frame.height)
   
-
-  //let dataURL = video.toDataURL('image/jpg')
   frame = frame.dataUri
   mergeImages([frame, video]).then(b64 => {
     console.log('new',b64)
@@ -89,27 +87,6 @@ function getSnapshot(){
     imageElement.setAttribute("src", b64);
     currentImgUrl = b64
   });
-  
-  
-
-  
-  /*
-
-
-  context = video.getContext('2d');
-  
-  let width = 500
-  let height = 200
-
-
-  context.drawImage(video, 0, 0, width, height);
-  let element = document.getElementById('screen')
-  
-  video.getContext('2d').canvas.drawImage(100, 100, 500)
-  
-  let dataURL = canvas.toDataURL('image/jpg')
-  imageElement.src = dataURL  
-  currentImgUrl = dataURL */
   showPreview()
 }
 
@@ -130,11 +107,9 @@ function submit(URL){
   }
 
   let blob = new Blob([ab], {type: mimeString})
-  console.log('currentId: ',currentId)
   let storageRef = firebase.storage().ref(""+currentId+"")
-  console.log(blob)
+
   storageRef.put(blob).then(function(snapshot) {
-    console.log('Uploaded a blob or file!')
     uploaded = true
     if(uploaded){
       window.location = URL 
@@ -146,7 +121,6 @@ function submit(URL){
 
 function showPreview(){
   preview.style.height = "70%"
-  //imageElement.src = currentImgUrl
 }
 
 function hidePreview(){
