@@ -1,11 +1,7 @@
-
-
 .tga_confirm{
   height: 100vh;
   position: absolute;
   display: flex;
-  
-  
   z-index: 10000;
   width: 100vw;
   background: linear-gradient(120deg, #F0B67F 0%, #C7EFCF 100%);

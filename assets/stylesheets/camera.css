@@ -86,7 +86,6 @@ body{
   padding-bottom: 1rem;
   margin-bottom: 2rem;
   margin-top: -10rem;
-
 }
 
 .camera_preview_controlls_link{
@@ -119,9 +118,7 @@ body{
 .camera_preview_image{
   max-width: 90%;
   margin-top: 2rem;
-  
 }
-
 
 @media(max-width: 700px){
 
@@ -135,6 +132,5 @@ body{
 
   .camera_preview_controlls{
     margin-top: 0rem;
-    
   }
 }
