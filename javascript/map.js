@@ -162,7 +162,7 @@ function initMap() {
             }
             let y = 'https://firebasestorage.googleapis.com/v0/b/thegiveaway.appspot.com/o/'+ arrayOfIds[index] +'?alt=media&token=08eabc32-5dc5-4aa5-b827-78b6bb7f8a1f'
             let x = "" + y + ""
-            let currentWindow = "<div style='display:flex; flex-direction:column;'><img style='width: 300px; ' src=" + x + "><a onclick='downloadImg()'>Download</a></div>"
+            let currentWindow = "<div style='display:flex; flex-direction:column;'><img style='width: 400px; ' src=" + x + "><a onclick='downloadImg()'>Download</a></div>"
             console.log(currentWindow)
 
            // currentImg = document.getElementsByTagName('img')[0]
